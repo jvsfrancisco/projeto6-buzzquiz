@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
 }
 
 /*cabeçalho*/
@@ -36,7 +36,7 @@ header p {
 /* nav é toda a navegação do site*/
 nav {
     display: flex;
-    height: 100vh;
+    height: 181px;
     width: 100vw;
 }
 
@@ -94,5 +94,21 @@ nav {
     display: flex;
     justify-content: center;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url(https://www.viaggiamo.it/wp-content/uploads/2014/07/047.jpg);
-    object-fit: cover;
+}
+
+.tituloLista{
+    margin-top: 20px;
+    margin: 20px auto 0px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 90vw;
+    background-color: aqua;
+}
+
+.listaQuizz{
+    margin-top: 100px;
+    background-color: green;
+    width: 90vw;
+    height: 500px;
+
 }
