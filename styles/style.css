@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    
 }
 
 body {
@@ -20,6 +20,7 @@ header {
 }
 
 header p {
+    font-family: 'Roboto', sans-serif;
     font-size: 37px;
     font-weight: 700;
     height: 63px;
@@ -29,6 +30,9 @@ header p {
     color: #FFFFFF;
 }
 
+.hidden {
+    display: none;
+}
 /* nav é toda a navegação do site*/
 nav {
     display: flex;
@@ -48,6 +52,7 @@ nav {
 }
 
 .escritaBoxCriarQuizz {
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 400;
     color: #B9B9B9;
