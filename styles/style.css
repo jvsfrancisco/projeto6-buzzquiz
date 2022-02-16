@@ -3,6 +3,7 @@
    font-family: 'Roboto', sans-serif;
 }
 header{
+    position: fixed;
     width: 100vw;
     height: 69px;
     background-color: #EC362D;
