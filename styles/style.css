@@ -1,16 +1,26 @@
-*{
+* {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-header{
-    position: fixed;
+
+body {
+    background-color: #FAFAFA;
+
+}
+
+/*cabeçalho*/
+header {
     width: 100vw;
     height: 69px;
     background-color: #EC362D;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
 }
-header p{
+
+header p {
     font-size: 37px;
     font-weight: 700;
     height: 63px;
@@ -20,3 +30,29 @@ header p{
     color: #FFFFFF;
 }
 
+/* nav é toda a navegação do site*/
+nav {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* o box vazio com o botão de criar um quizz*/
+.boxCriarQuizz {
+    height: 181px;
+    width: 90vw;
+    border: 1px dashed #D5D5D5;
+    border-radius: 5px;
+    background-color: #FAFAFA;
+    margin: 100px auto 0px;
+
+}
+
+.escritaBoxCriarQuizz {
+    font-size: 20px;
+    font-weight: 400;
+    color: #B9B9B9;
+    padding: 0px 50px;
+    margin-top: 30px;
+    text-align: center;
+}
