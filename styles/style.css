@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
 }
 
 /*cabeçalho*/
@@ -32,7 +32,7 @@ header p {
 /* nav é toda a navegação do site*/
 nav {
     display: flex;
-    height: 100vh;
+    height: 181px;
     width: 100vw;
 }
 
@@ -76,4 +76,18 @@ nav {
     cursor: pointer;
     background-color: #EC362D;
     color: #FFFFFF;
+}
+.tituloLista{
+    margin-top: 20px;
+    margin: 20px auto 0px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 90vw;
+    background-color: aqua;
+}
+.listaQuizz{
+    margin-top: 100px;
+    background-color: green;
+   width: 90vw;
+   height: 500px;
 }
