@@ -82,6 +82,20 @@ nav {
     background-color: #EC362D;
     color: #FFFFFF;
 }
+
+.sub-header {
+    position: absolute;
+    left: 0px;
+    top: 69px;
+    width: 400px;
+    height: 142px;
+    left: 0px;
+    top: 69px;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url(https://www.viaggiamo.it/wp-content/uploads/2014/07/047.jpg);
+}
+
 .tituloLista{
     margin-top: 20px;
     margin: 20px auto 0px;
@@ -90,9 +104,11 @@ nav {
     width: 90vw;
     background-color: aqua;
 }
+
 .listaQuizz{
     margin-top: 100px;
     background-color: green;
-   width: 90vw;
-   height: 500px;
+    width: 90vw;
+    height: 500px;
+
 }
