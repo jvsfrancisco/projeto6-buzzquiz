@@ -82,3 +82,17 @@ nav {
     background-color: #EC362D;
     color: #FFFFFF;
 }
+
+.sub-header {
+    position: absolute;
+    left: 0px;
+    top: 69px;
+    width: 400px;
+    height: 142px;
+    left: 0px;
+    top: 69px;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url(https://www.viaggiamo.it/wp-content/uploads/2014/07/047.jpg);
+    object-fit: cover;
+}
