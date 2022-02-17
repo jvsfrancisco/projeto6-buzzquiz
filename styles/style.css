@@ -94,9 +94,8 @@ nav {
     font-weight: 700;
     width: 91vw;
 }
-section .tituloLista{
-    margin-top: 20px;
-    margin: 35px auto 0px;
+.divTituloLista .tituloLista{
+    margin: 100px auto 0px;
     background-color: #434CA0;
 }
 
@@ -133,9 +132,10 @@ section .tituloLista{
 .barraSeusQuizzes{
     width: 91vw;
     height: 50px;
-    background-color: #FAFAFA;
-    margin: 60px auto 0px;
+    background-color: chocolate ;
+    margin: 95px auto 20px;
     display: flex;
+
 } 
 .barraSeusQuizzes .tituloLista{
     height: 20px;
@@ -144,15 +144,18 @@ section .tituloLista{
     width: 30px;
     height: 30px;
     color: red;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 .listaSeusQuizzes{    /*aplicação quebrada, não conseguindo colocar mais de uma div com img que quebra*/
     display:flex;
     background-color: gray;
-    height: 100%;   /*trocar por 100% pra funcionar direito o JAVASCRIPT*/
+    height: 110%;   /*trocar por 100% pra funcionar direito o JAVASCRIPT*/
     width: 91vw;
     margin: 0px auto 20px;
 }
+
+
+
 
 .sub-header {
     width: 100%;

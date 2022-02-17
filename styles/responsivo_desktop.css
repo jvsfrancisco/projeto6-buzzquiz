@@ -7,6 +7,9 @@
         justify-content: space-between; 
         flex-wrap: wrap; 
     }
+    .listaSeusQuizzes{
+        flex-wrap: wrap;
+    }
 }
 @media(min-width:1051px){
     .botaoBoxCriarQuizz{
