@@ -51,6 +51,7 @@ nav {
     border-radius: 5px;
     background-color: #FAFAFA;
     margin: 100px auto 0px;
+    position: relative;
 
 }
 
@@ -65,19 +66,19 @@ nav {
     text-align: center;
 }
 .botaoBoxCriarQuizz {
+    position: absolute;
     height: 40px;
     width: 151px;
     background: #FAFAFA;
     border: 1px dashed #EC362D;
     border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+      margin-left: 25vw;
     font-size: 21px;
-    margin-left: 25vw;
     font-weight: 400;
     color: #EC362D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .botaoBoxCriarQuizz:hover {
@@ -96,17 +97,14 @@ nav {
 section .tituloLista{
     margin-top: 20px;
     margin: 35px auto 0px;
+    background-color: #434CA0;
 }
 
 .listaQuizz{
     margin: 10px auto 0px;
     width: 91vw;
     height: 800px;
-    overflow: hidden;
-    /* colocar no mediaQuery pra ficar em linha 
-    display: flex;
-    justify-content: space-between; 
-    flex-wrap: wrap;  */  
+    overflow: hidden;  
 }
 .quizz{
     width: 340px;
@@ -134,7 +132,7 @@ section .tituloLista{
 /*quando o quizz for criado, acionar essa parte*/
 .barraSeusQuizzes{
     width: 91vw;
-    height: 100px;
+    height: 50px;
     background-color: #FAFAFA;
     margin: 60px auto 0px;
     display: flex;
