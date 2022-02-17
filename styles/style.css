@@ -153,7 +153,9 @@ nav {
     width: 91vw;
     margin: 0px auto 20px;
 }
-
+.listaSeusQuizzes .quizz{
+    margin-left: 15px;
+}
 
 
 

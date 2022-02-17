@@ -10,6 +10,8 @@
     .listaSeusQuizzes{
         flex-wrap: wrap;
     }
+    .barraSeusQuizzes{
+    }
 }
 @media(min-width:1051px){
     .botaoBoxCriarQuizz{
@@ -24,6 +26,8 @@
     .tituloLista{
      width: 1051px;
     }
-    
-
+    .listaSeusQuizzes{
+     width: 1051px;   
+    }
+   
 }
