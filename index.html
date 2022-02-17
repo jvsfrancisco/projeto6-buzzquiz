@@ -23,20 +23,46 @@
     </header>
 
     <main>
-        <section class="home hidden">
-            <nav>
-                <div class="boxCriarQuizz">
+        <section class="home ">
+            <nav class="primeiraQuizzUsuario">
+                <div class="boxCriarQuizz ">
                     <p class="escritaBoxCriarQuizz">Você não criou nenhum quizz ainda :(</p>
                     <button class="botaoBoxCriarQuizz">Criar Quizz</button>
                 </div>
             </nav>
+            <nav class="quizzUsuario hidden">
+            <div class="barraSeusQuizzes"> 
+                <p class="tituloLista">Seus Quizzes </p>
+                <ion-icon class="plus" name="add-circle"></ion-icon>
+            </div> 
+            <div class="listaSeusQuizzes ">
+                <div class="quizz">
+                    <p class="escritaBrancaQuizz">Acerte os personagens corretos dos Simpsons e prove seu amor! </p>                     
+                <img src="./images/simpsons.png">  
+                </div>
+             </div>
+             </nav>
+
             <p class="tituloLista">Todos os Quizzes </p>
                 <div class="listaQuizz">
+                    <div class="quizz">
+                        <p class="escritaBrancaQuizz">Acerte os personagens corretos dos Simpsons e prove seu amor! </p>                     
+                    <img src="./images/simpsons.png">   
+                    </div>
+                    <div class="quizz">
+                        <p class="escritaBrancaQuizz">Acerte os personagens corretos dos Simpsons e prove seu amor! </p>                     
+                        <img src="./images/simpsons.png">   
+                        </div>
+                        <div class="quizz">
+                            <p class="escritaBrancaQuizz">Acerte os personagens corretos dos Simpsons e prove seu amor! </p>                     
+                            <img src="./images/simpsons.png">   
+                            </div>
+    
 
                 </div>
         </section>
 
-        <section class="quizz-page">
+        <section class="quizz-page hidden">
             <nav>
                 <div class= "sub-header">
                     <img src = "https://kb.rspca.org.au/wp-content/uploads/2021/07/collie-beach-bokeh.jpg">
@@ -47,7 +73,7 @@
         </section>
 
     </main>
-    
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 
 </html>
