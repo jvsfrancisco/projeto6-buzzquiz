@@ -131,7 +131,7 @@ section .tituloLista{
     color: #FFFFFF;
     font-weight: 400;
 }
-                 /*quando o quizz for criado, acionar essa parte*/
+/*quando o quizz for criado, acionar essa parte*/
 .barraSeusQuizzes{
     width: 91vw;
     height: 100px;
@@ -154,27 +154,25 @@ section .tituloLista{
     height: 100%;   /*trocar por 100% pra funcionar direito o JAVASCRIPT*/
     width: 91vw;
     margin: 0px auto 20px;
-   
 }
 
-
-/*.sub-header {
+.sub-header {
     width: 100%;
-    height: 181px;
-    position: relative; precisa por causa do titulo q vai ser absolute
+    height: 227px;
+    position: relative; /*precisa por causa do titulo q vai ser absolute*/
     margin-top: 14px;
+    display: flex;
 }
 
-.capa img {
+.sub-header img {
     border-radius: 5px;
     height: 100%;
     width: 100%;
     object-fit: cover;
-    position: absolute; precisa por causa do ::after
 }
 
-
-/* .sub-header img::after {
+/* 
+.sub-header img::after {
     display: block;
     position: absolute;
     border-radius: 5px;
@@ -188,15 +186,82 @@ section .tituloLista{
     width: 100%;
     content: "";
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)) 
-}
+} */
 
 .sub-header p {
-    font-family: "Roboto",sans-serif;
+    font-family: 'Roboto',sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 39px;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.50);
+    padding: 0 20px;
+}
+
+.questions {
+    margin-top: 100px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    width: 759px;
+    height: 676px;
+    display: flex;
+    /* padding: auto; */
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ansewr {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 686px;
+
+}
+.alternatives{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.alternatives img {
+    margin-bottom: 7px;
+    width: 329.91px;
+    height: 175.2px;
+}
+
+.alternatives span{
+    font-family: Roboto;
     font-style: normal;
-    font-weight: normal;
-    font-size: 19px;
-    line-height: 22px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
     display: flex;
     align-items: center;
-    text-align: center;
-} */ 
+    color: #000000;
+}
+
+.question-title{
+    width: 688.16px;
+    height: 137.99px;
+    margin-bottom: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #434CA0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+
