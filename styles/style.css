@@ -49,7 +49,7 @@ nav {
     width: 91vw;
     border: 1px dashed #D5D5D5;
     border-radius: 5px;
-    background-color: #FAFAFA;
+    background-color: #FFFFFF;
     margin: 100px auto 0px;
 }
 
@@ -65,17 +65,17 @@ nav {
 }
 .botaoBoxCriarQuizz {
     height: 40px;
-    width: 151px;
+    width: 151px;   
     background: #FAFAFA;
     border: 1px dashed #EC362D;
     border-radius: 50px;
-    margin-left: 25vw;
+    margin-left: calc(50% - 75px);
+    margin-right: calc(50% - 75px);
+    margin-right: 25%;
     font-size: 21px;
     font-weight: 400;
     color: #EC362D;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 .botaoBoxCriarQuizz:hover {
@@ -94,10 +94,6 @@ nav {
 .divTituloLista .tituloLista{
     margin: 100px auto 0px;
 }
-.divTituloLista{
-    background-color: #434CA0;
-}
-
 .listaQuizz{
     margin: 10px auto 0px;
     width: 91vw;
