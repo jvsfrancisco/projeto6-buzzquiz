@@ -51,8 +51,6 @@ nav {
     border-radius: 5px;
     background-color: #FAFAFA;
     margin: 100px auto 0px;
-    position: relative;
-
 }
 
 .escritaBoxCriarQuizz {
@@ -66,7 +64,6 @@ nav {
     text-align: center;
 }
 .botaoBoxCriarQuizz {
-    position: absolute;
     height: 40px;
     width: 151px;
     background: #FAFAFA;
@@ -96,6 +93,8 @@ nav {
 }
 .divTituloLista .tituloLista{
     margin: 100px auto 0px;
+}
+.divTituloLista{
     background-color: #434CA0;
 }
 
@@ -110,10 +109,10 @@ nav {
     height:181px;
     border-radius: 5px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
-    position: relative;
-    margin-bottom: 12px;
     display: flex;
     justify-content: center;
+    margin-bottom: 12px;
+    position: relative;
 }
 .escritaBrancaQuizz{
     font-family:'Roboto', sans-serif; 
@@ -131,7 +130,7 @@ nav {
 /*quando o quizz for criado, acionar essa parte*/
 .barraSeusQuizzes{
     width: 91vw;
-    height: 50px;
+    height: 30px;
     background-color: chocolate ;
     margin: 95px auto 20px;
     display: flex;
@@ -146,18 +145,6 @@ nav {
     color: red;
     margin-top: 0px;
 }
-.listaSeusQuizzes{    /*aplicação quebrada, não conseguindo colocar mais de uma div com img que quebra*/
-    display:flex;
-    background-color: gray;
-    height: 110%;   /*trocar por 100% pra funcionar direito o JAVASCRIPT*/
-    width: 91vw;
-    margin: 0px auto 20px;
-}
-.listaSeusQuizzes .quizz{
-    margin-left: 15px;
-}
-
-
 
 .sub-header {
     width: 100%;
