@@ -1,34 +1,41 @@
-@media(min-width: 534px){
-    .botaoBoxCriarQuizz{
-    left: 15vw;
+@media(min-width: 534px) {
+    .botaoBoxCriarQuizz {
+        left: 15vw;
     }
-    .listaQuizz{
+
+    .listaQuizz {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 5px; 
-        flex-wrap: wrap; 
-    }
-    .listaSeusQuizzes{
+        margin-bottom: 5px;
         flex-wrap: wrap;
     }
+
+    .listaSeusQuizzes {
+        flex-wrap: wrap;
+    }
+
     /* .barraSeusQuizzes{
     } */
 }
 
-@media(min-width:1051px){
-    .boxCriarQuizz{
-    width: 1051px;
+@media(min-width:1051px) {
+    .boxCriarQuizz {
+        width: 1051px;
     }
-    .listaQuizz{
-    width: 1051px;
+
+    .listaQuizz {
+        width: 1051px;
     }
-    .tituloLista{
-    width: 1051px;
+
+    .tituloLista {
+        width: 1051px;
     }
-    .listaSeusQuizzes{
-    width: 1051px;   
+
+    .listaSeusQuizzes {
+        width: 1051px;
     }
-    .barraSeusQuizzes{
+
+    .barraSeusQuizzes {
         width: 1051px;
     }
 }

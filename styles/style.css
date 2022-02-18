@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    
+
 }
 
 body {
@@ -34,6 +34,7 @@ header p {
 .hidden {
     display: none;
 }
+
 /* nav é toda a navegação do site*/
 nav {
     display: flex;
@@ -49,7 +50,7 @@ nav {
     width: 91vw;
     border: 1px dashed #D5D5D5;
     border-radius: 5px;
-    background-color: #FFFFFF;
+    background-color: #FAFAFA;
     margin: 100px auto 0px;
 }
 
@@ -63,9 +64,10 @@ nav {
     margin-bottom: 30px;
     text-align: center;
 }
+
 .botaoBoxCriarQuizz {
     height: 40px;
-    width: 151px;   
+    width: 151px;
     background: #FAFAFA;
     border: 1px dashed #EC362D;
     border-radius: 50px;
@@ -75,7 +77,7 @@ nav {
     font-size: 21px;
     font-weight: 400;
     color: #EC362D;
-    
+
 }
 
 .botaoBoxCriarQuizz:hover {
@@ -85,24 +87,27 @@ nav {
     color: #FFFFFF;
 }
 
-.tituloLista{
-    font-family:'Roboto', sans-serif; 
+.tituloLista {
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 700;
     width: 91vw;
 }
-.divTituloLista .tituloLista{
-    margin: 100px auto 0px;
+
+.divTituloLista .tituloLista {
+    margin: 60px auto 0px;
 }
-.listaQuizz{
+
+.listaQuizz {
     margin: 10px auto 0px;
     width: 91vw;
     height: 100%;
-    overflow: hidden;  
+    overflow: hidden;
 }
-.quizz{
+
+.quizz {
     width: 340px;
-    height:181px;
+    height: 181px;
     border-radius: 5px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
     display: flex;
@@ -110,8 +115,9 @@ nav {
     margin-bottom: 12px;
     position: relative;
 }
-.escritaBrancaQuizz{
-    font-family:'Roboto', sans-serif; 
+
+.escritaBrancaQuizz {
+    font-family: 'Roboto', sans-serif;
     width: 300px;
     height: 54px;
     z-index: 1;
@@ -122,34 +128,35 @@ nav {
     bottom: 0px;
     color: #FFFFFF;
     font-weight: 400;
+    overflow: hidden;
 }
+
 /*quando o quizz for criado, acionar essa parte*/
-.barraSeusQuizzes{
+.barraSeusQuizzes {
     width: 91vw;
     height: 30px;
     margin: 95px auto 20px;
     display: flex;
 
-} 
-.barraSeusQuizzes .tituloLista{
+}
+
+.barraSeusQuizzes .tituloLista {
     height: 20px;
 }
-.plus{
+
+.plus {
     width: 30px;
     height: 30px;
     color: red;
-    margin-top: 0px;
+    margin-top: 10px;
 }
-.listaSeusQuizzes{    /*aplicação quebrada, não conseguindo colocar mais de uma div com img que quebra*/
-    display:flex;
-    background-color: gray;
-    height: 110%;   /*trocar por 100% pra funcionar direito o JAVASCRIPT*/
-    width: 91vw;
-    margin: 0px auto 20px;
+.quizzUsuario{
+height: 100%;
 }
-.listaSeusQuizzes .quizz{
-    margin-left: 15px;
+.quizzUsuario .listaQuizz{
+    /* height:300px; */
 }
+
 
 .quizz-page {
     display: flex;
@@ -161,11 +168,12 @@ nav {
 .sub-header {
     width: 100vw;
     height: 227px;
-    position: relative; /*precisa por causa do titulo q vai ser absolute*/
+    position: relative;
+    /*precisa por causa do titulo q vai ser absolute*/
     margin: 14px 0px 42px 0px;
     display: flex;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url(/images/Rectangle.png) no-repeat;
-    background-size:cover;
+    background-size: cover;
     background-position: center;
 }
 
@@ -200,7 +208,7 @@ nav {
     margin-top: 20px;
     width: 100%;
     height: 100%;
-    font: 700 39px 'Roboto',sans-serif ;
+    font: 700 39px 'Roboto', sans-serif;
     padding: 0 20px;
 }
 
@@ -224,7 +232,8 @@ nav {
     width: 686px;
 
 }
-.alternatives{
+
+.alternatives {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -236,14 +245,14 @@ nav {
     height: 175.2px;
 }
 
-.alternatives p{
+.alternatives p {
     line-height: 23px;
-    font: bold 20px "Roboto",sans-serif;
+    font: bold 20px "Roboto", sans-serif;
     display: flex;
     align-items: center;
 }
 
-.question-title{
+.question-title {
     width: 688.16px;
     height: 137.99px;
     margin-bottom: 21px;
@@ -251,18 +260,19 @@ nav {
     justify-content: center;
     align-items: center;
     background: #434CA0;
-    font: bold 23px "Roboto",sans-serif;
+    font: bold 23px "Roboto", sans-serif;
     line-height: 27px;
     color: #FFFFFF;
 }
 
-.other-choice{
+.other-choice {
     opacity: 0.3;
 }
 
 .wrong {
-    color:#FF4B4B;
+    color: #FF4B4B;
 }
+
 .right {
-    color:#009C22;
+    color: #009C22;
 }
