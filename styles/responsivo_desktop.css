@@ -1,6 +1,6 @@
 @media(min-width: 534px){
     .botaoBoxCriarQuizz{
-     left: 15vw;
+    left: 15vw;
     }
     .listaQuizz{
         display: flex;
@@ -10,24 +10,24 @@
     .listaSeusQuizzes{
         flex-wrap: wrap;
     }
-    .barraSeusQuizzes{
-    }
+    /* .barraSeusQuizzes{
+    } */
 }
+
 @media(min-width:1051px){
     .botaoBoxCriarQuizz{
     left: 8vw;
     }
     .boxCriarQuizz{
-     width: 1051px;
+    width: 1051px;
     }
     .listaQuizz{
-     width: 1051px;
+    width: 1051px;
     }
     .tituloLista{
-     width: 1051px;
+    width: 1051px;
     }
     .listaSeusQuizzes{
-     width: 1051px;   
+    width: 1051px;   
     }
-   
 }

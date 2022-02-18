@@ -72,7 +72,7 @@ nav {
     background: #FAFAFA;
     border: 1px dashed #EC362D;
     border-radius: 50px;
-      margin-left: 25vw;
+    margin-left: 25vw;
     font-size: 21px;
     font-weight: 400;
     color: #EC362D;
@@ -157,22 +157,29 @@ nav {
     margin-left: 15px;
 }
 
-
-
-.sub-header {
-    width: 100%;
-    height: 227px;
-    position: relative; /*precisa por causa do titulo q vai ser absolute*/
-    margin-top: 14px;
+.quizz-page {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.sub-header img {
-    border-radius: 5px;
+.sub-header {
+    width: 100vw;
+    height: 227px;
+    position: relative; /*precisa por causa do titulo q vai ser absolute*/
+    margin: 14px 0px 42px 0px;
+    display: flex;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url(/images/Rectangle.png) no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+
+/* .sub-header img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-}
+} */
 
 /* 
 .sub-header img::after {
@@ -192,24 +199,19 @@ nav {
 } */
 
 .sub-header p {
-    font-family: 'Roboto',sans-serif;
-    position: absolute;
-    top: 0;
-    left: 0;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
     width: 100%;
     height: 100%;
-    font-size: 39px;
-    font-weight: 700;
-    background-color: rgba(0, 0, 0, 0.50);
+    font: 700 39px 'Roboto',sans-serif ;
     padding: 0 20px;
 }
 
 .questions {
-    margin-top: 100px;
+    margin-bottom: 42px;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     width: 759px;
@@ -240,15 +242,11 @@ nav {
     height: 175.2px;
 }
 
-.alternatives span{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
+.alternatives p{
     line-height: 23px;
+    font: bold 20px "Roboto",sans-serif;
     display: flex;
     align-items: center;
-    color: #000000;
 }
 
 .question-title{
@@ -259,12 +257,18 @@ nav {
     justify-content: center;
     align-items: center;
     background: #434CA0;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 23px;
+    font: bold 23px "Roboto",sans-serif;
     line-height: 27px;
     color: #FFFFFF;
 }
 
+.other-choice{
+    opacity: 0.3;
+}
 
+.wrong {
+    color:#FF4B4B;
+}
+.right {
+    color:#009C22;
+}
