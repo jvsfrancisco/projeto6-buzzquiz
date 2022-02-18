@@ -97,7 +97,7 @@ nav {
 .listaQuizz{
     margin: 10px auto 0px;
     width: 91vw;
-    height: 800px;
+    height: 100%;
     overflow: hidden;  
 }
 .quizz{

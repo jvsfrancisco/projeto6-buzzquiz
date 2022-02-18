@@ -4,7 +4,8 @@
     }
     .listaQuizz{
         display: flex;
-        justify-content: space-between; 
+        justify-content: space-between;
+        margin-bottom: 5px; 
         flex-wrap: wrap; 
     }
     .listaSeusQuizzes{
@@ -15,9 +16,6 @@
 }
 
 @media(min-width:1051px){
-    .botaoBoxCriarQuizz{
-    left: 8vw;
-    }
     .boxCriarQuizz{
     width: 1051px;
     }
