@@ -24,17 +24,17 @@
     </header>
 
     <main>
-        <section class="home ">
-            <nav class="primeiraQuizzUsuario ">
+        <section class="home  ">
+            <nav class="primeiraQuizzUsuario  ">
                 <div class="boxCriarQuizz ">
                     <p class="escritaBoxCriarQuizz">Você não criou nenhum quizz ainda :(</p>
-                    <button class="botaoBoxCriarQuizz">Criar Quizz</button>
+                    <button class="botaoBoxCriarQuizz" onclick="criarQuizz(this)">Criar Quizz</button>
                 </div>
             </nav>
             <nav class="quizzUsuario hidden">
-                <div class="barraSeusQuizzes">
+                <div class="barraSeusQuizzes ">
                     <p class="tituloLista">Seus Quizzes </p>
-                    <ion-icon class="plus" name="add-circle"></ion-icon>
+                    <ion-icon class="plus" onclick="criarQuizz(this)" name="add-circle"></ion-icon>
                 </div>
                 <div class="listaQuizz ">
                   
@@ -176,6 +176,7 @@
             </section>
         </div>
     </main>
+    <script src="scripts/script.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 
