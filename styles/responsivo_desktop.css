@@ -19,16 +19,62 @@
     .boxCriarQuizz{
     width: 1051px;
     }
+
     .listaQuizz{
     width: 1051px;
     }
+
     .tituloLista{
     width: 1051px;
     }
+
     .listaSeusQuizzes{
     width: 1051px;   
     }
+
     .barraSeusQuizzes{
         width: 1051px;
+    }
+
+    .sub-header{ 
+        height: 227px;
+    }
+
+    .sub-header p {
+        font-size: 39px;
+        line-height: 46px
+    }
+    
+    .questions {
+        width: 759px;
+        height: 676px;
+        margin: 0 auto 42px auto;
+    }
+    
+    .ansewr {
+        width: 686px;
+        margin: 0 auto 0 auto;
+    }
+    .alternatives {
+        margin-bottom: 20px;
+    }
+
+    .alternatives img {
+        margin-bottom: 7px;
+        width: 329.91px;
+        height: 175.2px;
+    }
+
+    .alternatives p{
+        line-height: 23px;
+        font-size: 20px;
+    }
+
+    .question-title{
+        width: 688.16px;
+        height: 137.99px;
+        font-size: 23px;
+        line-height: 27px;
+        margin: 0 auto 21px auto;
     }
 }
