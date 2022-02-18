@@ -1,35 +1,33 @@
 @media(min-width: 534px){
     .botaoBoxCriarQuizz{
-     left: 15vw;
+    left: 15vw;
     }
     .listaQuizz{
         display: flex;
         justify-content: space-between; 
         flex-wrap: wrap; 
     }
-  
-    .barraSeusQuizzes{
-        margin: 95px auto 20px;
+    .listaSeusQuizzes{
+        flex-wrap: wrap;
     }
-    .plus{
-    }
+    /* .barraSeusQuizzes{
+    } */
 }
+
 @media(min-width:1051px){
     .botaoBoxCriarQuizz{
     left: 8vw;
     }
     .boxCriarQuizz{
-     width: 1051px;
-    }
-    .listaQuizz{
-     width: 1051px;
-    }
-    .tituloLista{
-     width: 1051px;
-    }
-    .barraSeusQuizzes{
     width: 1051px;
     }
-
-   
+    .listaQuizz{
+    width: 1051px;
+    }
+    .tituloLista{
+    width: 1051px;
+    }
+    .listaSeusQuizzes{
+    width: 1051px;   
+    }
 }
