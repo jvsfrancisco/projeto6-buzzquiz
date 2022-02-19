@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    
-<head> 
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
             <nav class="primeiraQuizzUsuario">
                 <div class="boxCriarQuizz ">
                     <p class="escritaBoxCriarQuizz">Você não criou nenhum quizz ainda :(</p>
-                    <button class="botaoBoxCriarQuizz" onclick="quizzRender()">Criar Quizz</button>
+                    <button class="botaoBoxCriarQuizz" onclick="criarQuizz()">Criar Quizz</button>
                 </div>
             </nav>
             <nav class="quizzUsuario disappear">
@@ -37,7 +37,7 @@
                     <ion-icon class="plus" onclick="criarQuizz(this)" name="add-circle"></ion-icon>
                 </div>
                 <div class="listaQuizz1">
-                
+
                     <!-- <div class="quizz">
                         <p class="escritaBrancaQuizz">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                         <img src="./images/simpsons.png">
@@ -76,110 +76,107 @@
 
             </div>
         </section>
-        <div class="SO_PRA_USAR_O_disappear disappear">
-            <section class="quizz-page disappear">
-                <nav class="sub-header">
-                    <!-- <img src = "/images/simpsons.png"> -->
-                    <p>O Quão Potterhead é você?</p>
-                </nav>
 
-                <nav class="questions">
-                    <article>
-                        <div class="question-title">
-                            <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
+        <section class="quiz-page">
+            <!-- <nav class="sub-header">
+                <img src = "/images/simpsons.png">
+                <p>O Quão Potterhead é você?</p>
+            </nav>
+
+            <nav class="questions">
+                    <div class="question-title">
+                        <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
+                    </div>
+
+                    <div class="answer">
+                        <div class="alternatives other-choice ">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p class="wrong">Gatíneo</p>
                         </div>
 
-                        <div class="ansewr">
-                            <div class="alternatives other-choice ">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p class="wrong">Gatíneo</p>
-                            </div>
-
-                            <div class="alternatives other-choice ">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p class="wrong">Ratata</p>
-                            </div>
-
-                            <div class="alternatives other-choice ">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p class="wrong">Sapo gordo</p>
-                            </div>
-
-                            <div class="alternatives right choiced">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p class="right">Mustela putorius (o Furão)</p>
-                            </div>
-                        </div>
-                    </article>
-                </nav>
-
-                <nav class="questions">
-                    <article>
-                        <div class="question-title">
-                            <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
+                        <div class="alternatives other-choice ">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p class="wrong">Ratata</p>
                         </div>
 
-                        <div class="ansewr">
-                            <div class="alternatives">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p>Gatíneo</p>
-                            </div>
-
-                            <div class="alternatives">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p>Ratata</p>
-                            </div>
-
-                            <div class="alternatives">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p>Sapo gordo</p>
-                            </div>
-
-                            <div class="alternatives">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p>Mustela putorius (o Furão)</p>
-                            </div>
-                        </div>
-                    </article>
-                </nav>
-
-                <nav class="questions">
-                    <article>
-                        <div class="question-title">
-                            <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
+                        <div class="alternatives other-choice ">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p class="wrong">Sapo gordo</p>
                         </div>
 
-                        <div class="ansewr">
-                            <div class="alternatives">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p>Gatíneo</p>
-                            </div>
-
-                            <div class="alternatives">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p>Ratata</p>
-                            </div>
-
-                            <div class="alternatives">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p>Sapo gordo</p>
-                            </div>
-
-                            <div class="alternatives">
-                                <img src="./images/simp.jpg" alt="simpson">
-                                <p>Mustela putorius (o Furão)</p>
-                            </div>
+                        <div class="alternatives right choiced">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p class="right">Mustela putorius (o Furão)</p>
                         </div>
-                    </article>
-                </nav>
+                    </div>
+            </nav>
 
-            </section>
-        </div>
+            <nav class="questions">
+                <article>
+                    <div class="question-title">
+                        <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
+                    </div>
+
+                    <div class="answer">
+                        <div class="alternatives">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p>Gatíneo</p>
+                        </div>
+
+                        <div class="alternatives">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p>Ratata</p>
+                        </div>
+
+                        <div class="alternatives">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p>Sapo gordo</p>
+                        </div>
+
+                        <div class="alternatives">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p>Mustela putorius (o Furão)</p>
+                        </div>
+                    </div>
+                </article>
+            </nav>
+
+            <nav class="questions">
+                <article>
+                    <div class="question-title">
+                        <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
+                    </div>
+
+                    <div class="answer">
+                        <div class="alternatives">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p>Gatíneo</p>
+                        </div>
+
+                        <div class="alternatives">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p>Ratata</p>
+                        </div>
+
+                        <div class="alternatives">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p>Sapo gordo</p>
+                        </div>
+
+                        <div class="alternatives">
+                            <img src="./images/simp.jpg" alt="simpson">
+                            <p>Mustela putorius (o Furão)</p>
+                        </div>
+                    </div>
+                </article>
+            </nav> -->
+        </section>
+        
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script  src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script  src="scripts/script.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>

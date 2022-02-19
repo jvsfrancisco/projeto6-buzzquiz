@@ -7,7 +7,6 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 5px;
-        flex-wrap: wrap;
     }
 
     .listaSeusQuizzes {
@@ -54,7 +53,7 @@
         margin: 0 auto 42px auto;
     }
     
-    .ansewr {
+    .answer {
         width: 686px;
         margin: 0 auto 0 auto;
     }
