@@ -1,6 +1,6 @@
 let allquizz = document.querySelector(".listaQuizz")
 const telaInicial = document.querySelector(".home")
-const quizzPage = document.querySelector(".quizz-page")
+let quizzPage = document.querySelector(".quizz-page")
 
 
 function criarQuizz(acionado) {
@@ -51,6 +51,7 @@ function openQuizz(id) {
 function openQuizzRender(quizz) {
     // quizzPage.classList.remove("disappear")
     console.log(quizz.data)
+    console.log(quizzPage)
 
     let arrayQuizz = quizz.data
 
@@ -79,6 +80,5 @@ function openQuizzRender(quizz) {
                             </nav>`
     })
 }
-
 
 
