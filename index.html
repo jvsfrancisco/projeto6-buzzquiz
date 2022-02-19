@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+    
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +25,10 @@
 
     <main>
         <section class="home">
-            <nav class="primeiraQuizzUsuario ">
+            <nav class="primeiraQuizzUsuario">
                 <div class="boxCriarQuizz ">
                     <p class="escritaBoxCriarQuizz">Você não criou nenhum quizz ainda :(</p>
-                    <button class="botaoBoxCriarQuizz" onclick="gerandoTodosQuizzes(this)">Criar Quizz</button>
+                    <button class="botaoBoxCriarQuizz" onclick="quizzRender()">Criar Quizz</button>
                 </div>
             </nav>
             <nav class="quizzUsuario disappear">
@@ -176,6 +176,8 @@
             </section>
         </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script  src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script  src="scripts/script.js"></script>
 </body>
