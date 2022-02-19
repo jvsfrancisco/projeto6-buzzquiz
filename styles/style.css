@@ -153,9 +153,13 @@ nav {
 .quizzUsuario{
 height: 100%;
 }
-.quizzUsuario .listaQuizz{
-    /* height:300px; */
+.listaSeusQuizz{
+    margin: 10px auto 0px;
+    width: 91vw;
+    height: 100%;
+    overflow: hidden;
 }
+
 
 
 .quizz-page {

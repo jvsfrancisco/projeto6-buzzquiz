@@ -10,7 +10,10 @@
         flex-wrap: wrap;
     }
 
-    .listaSeusQuizzes {
+    .listaSeusQuizz {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
         flex-wrap: wrap;
     }
 
@@ -26,6 +29,9 @@
     .listaQuizz{
     width: 1051px;
     }
+    ..listaSeusQuizz{
+        width: 1051px;
+        }
 
     .tituloLista{
     width: 1051px;
