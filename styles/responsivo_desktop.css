@@ -24,6 +24,8 @@
 
     .listaQuizz{
     width: 1051px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     }
 
     .tituloLista{
