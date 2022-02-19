@@ -1,6 +1,6 @@
 let allquizz = document.querySelector(".listaQuizz")
 const telaInicial = document.querySelector(".home")
-let quizzPage = document.querySelector(".quizz-page")
+let quizzPage = document.getElementsByClassName("quizz-page")
 
 
 function criarQuizz(acionado) {
@@ -10,7 +10,7 @@ function criarQuizz(acionado) {
 homePageRender()
 
 function homePageRender() {
-    const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
+    const promise = axios.get("https:mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
     promise.then(quizGenerator);
 }
 
@@ -44,12 +44,12 @@ function quizzGeral(quizz) {
 
 function openQuizz(id) {
     telaInicial.classList.add("disappear")
-    const promise = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`)
+    const promise = axios.get(`//https:mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`)
     promise.then(openQuizzRender)
 }
 
 function openQuizzRender(quizz) {
-    // quizzPage.classList.remove("disappear")
+    quizzPage.classList.remove("disappear")
     console.log(quizz.data)
     console.log(quizzPage)
 
@@ -60,25 +60,26 @@ function openQuizzRender(quizz) {
         </nav>`
     let arrayQuestions = arrayQuizz.questions
 
-    arrayQuestions.forEach(function () {
-        quizzPage.innerHTML += `<nav class="questions">
-            <article>
-                <div class="question-title">
-                    <p>${arrayQuestions.title}</p>
-                </div>`
-
-        let arrayAnswers = arrayQuizz.questions.answers
-
-        arrayAnswers.forEach(function (){
-            quizzPage.innerHTML += `<div class="answer">
-                        <div class="alternatives ${arrayAnswers.isCorrectAnswer}">
-                            <img src="${arrayAnswers.image}" alt="simpson">
-                            <p>${arrayAnswers.text}</p>
-                        </div>`
-        })
-        quizzPage.innerHTML += `</article>
+    arrayQuestions.foreach(trazer)
+    quizzPage.innerHTML += `</article>
                             </nav>`
-    })
 }
 
+function trazer(arrayQuestions) {
+    quizzPage.innerHTML += `<nav class="questions">
+        <article>
+            <div class="question-title">
+                <p>${arrayQuestions.title}</p>
+            </div>`
 
+    let arrayAnswers = arrayQuizz.questions.answers
+    arrayAnswers.foreach(blabla)
+}
+
+function blabla() {
+    quizzPage.innerHTML += `<div class="answer">
+                <div class="alternatives ${arrayAnswers.isCorrectAnswer}">
+                    <img src="${arrayAnswers.image}" alt="simpson">
+                    <p>${arrayAnswers.text}</p>
+                </div>`
+}

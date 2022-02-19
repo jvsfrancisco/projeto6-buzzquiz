@@ -215,7 +215,7 @@ height: 100%;
     padding: 0 20px;
 }
 
-.questions {
+section .questions {
     margin-bottom: 42px;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
