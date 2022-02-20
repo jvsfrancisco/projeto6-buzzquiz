@@ -66,7 +66,7 @@ function openQuizzRender(quizz) {
 
         let arrayAnswers = arrayQuestions.answers
 
-        arrayAnswers.forEach(function (arrayAnswers){
+        arrayAnswers.forEach(function (arrayAnswers) {
             quizzPage.innerHTML += `<div class="answer">
                         <div class="alternatives ${arrayAnswers.isCorrectAnswer}">
                             <img src="${arrayAnswers.image}" alt="simpson">
@@ -76,5 +76,3 @@ function openQuizzRender(quizz) {
     })
     console.log(quizzPage)
 }
-
-

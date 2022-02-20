@@ -301,10 +301,15 @@ section .questions {
     width: 375px;
     height: 256px;
     margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+
 }
 input{
     font-family: 'Roboto', sans-serif;
-    margin: 9px auto 0px;
+    margin: 9px;
     width: 341px;
     height: 46px;
     border-radius: 5px;
@@ -314,8 +319,12 @@ input{
     justify-content: center;
 }
 .createQuestions{
-    background-color: #434CA0;
-    margin-top: 10px;
+    /* background-color: #434CA0; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 211px;
+    margin:21px auto 24px auto;
 }
 .proximaPagina{
     width: 323px;

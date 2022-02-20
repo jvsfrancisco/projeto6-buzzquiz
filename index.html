@@ -24,19 +24,19 @@
     </header>
 
     <main>
-        <section class="home disappear ">
+        <section class="home">
             <nav class="primeiraQuizzUsuario ">
                 <div class="boxCriarQuizz ">
                     <p class="escritaBoxCriarQuizz">Você não criou nenhum quizz ainda :(</p>
                     <button class="botaoBoxCriarQuizz" onclick="criarQuizz()">Criar Quizz</button>
                 </div>
             </nav>
-            <nav class="quizzUsuario disappear">
+            <nav class="quizzUsuario">
                 <div class="barraSeusQuizzes ">
                     <p class="tituloLista ">Seus Quizzes </p>
                     <ion-icon class="plus" onclick="criarQuizz(this)" name="add-circle"></ion-icon>
                 </div>
-                    <!-- <div class="quizz">
+                <!-- <div class="quizz">
                         <p class="escritaBrancaQuizz">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                         <img src="./images/simpsons.png">
                     </div>
@@ -50,7 +50,7 @@
 
 
             </nav>
-            <div class="divTituloLista disappear">
+            <div class="divTituloLista">
                 <p class="tituloLista">Todos os Quizzes </p>
             </div>
             <div class="listaQuizz">
@@ -169,21 +169,21 @@
                 </article>
             </nav> -->
         </section>
-        
-    </main>
-    <main class="screensCreateQuizz ">
-        <div class="screens1CreateQuizz">
-        <span class="title top">Comece pelo começo</span>
-        <div class="whiteBoard">
-            <!-- <div class="createQuestions"> -->
-                <input class="titleQuizz" type="text" placeholder="Título do seu quizz"></input>
-                <input class="urlImage" type="url" placeholder="URL da imagem do seu quizz"></input>
-                <input class= "numberQuestions" type="number"placeholder="Quantidade de perguntas do quizz"></input>
-                <input class="numberLevels" type="number" placeholder="Quantidade de níveis do quizz"></input>
 
-        <!-- </div> -->
-    </div>
-       <button class="proximaPagina">Prosseguir pra criar perguntas</button>
+    </main>
+    <main class="screensCreateQuizz disappear ">
+        <div class="screens1CreateQuizz">
+            <span class="title top">Comece pelo começo</span>
+            <div class="whiteBoard">
+                <div class="createQuestions">
+                    <input class="titleQuizz" type="text" placeholder="Título do seu quizz"></input>
+                    <input class="urlImage" type="url" placeholder="URL da imagem do seu quizz"></input>
+                    <input class="numberQuestions" type="number" placeholder="Quantidade de perguntas do quizz"></input>
+                    <input class="numberLevels" type="number" placeholder="Quantidade de níveis do quizz"></input>
+                </div>
+            </div>
+            <button class="proximaPagina">Prosseguir pra criar perguntas</button>
+        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
