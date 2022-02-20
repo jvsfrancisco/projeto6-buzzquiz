@@ -24,7 +24,11 @@
     </header>
 
     <main>
+<<<<<<< HEAD
         <section class="home">
+=======
+        <section class="home  ">
+>>>>>>> 41547232435df40c6fc3c017d6c61bdd56a0497d
             <nav class="primeiraQuizzUsuario ">
                 <div class="boxCriarQuizz ">
                     <p class="escritaBoxCriarQuizz">Você não criou nenhum quizz ainda :(</p>
@@ -50,7 +54,11 @@
 
 
             </nav>
+<<<<<<< HEAD
             <div class="divTituloLista">
+=======
+            <div class="divTituloLista ">
+>>>>>>> 41547232435df40c6fc3c017d6c61bdd56a0497d
                 <p class="tituloLista">Todos os Quizzes </p>
             </div>
             <div class="listaQuizz">
@@ -169,6 +177,7 @@
                 </article>
             </nav> -->
         </section>
+<<<<<<< HEAD
 
     </main>
     <main class="screensCreateQuizz disappear ">
@@ -183,6 +192,79 @@
                 </div>
             </div>
             <button class="proximaPagina">Prosseguir pra criar perguntas</button>
+=======
+
+    </main>
+    <main class="screensCreateQuizz ">
+        <div class="screen1CreateQuizz  disappear">
+            <span class="title top">Comece pelo começo</span>
+            <div class="whiteBoard tela1">
+                <!-- <div class="createQuestions"> -->
+                <input class="titleQuizz" type="text" placeholder="  Título do seu quizz"></input>
+                <input class="urlImage" type="url" placeholder="  URL da imagem do seu quizz"></input>
+                <input class="numberQuestions" type="number" placeholder="  Quantidade de perguntas do quizz"></input>
+                <input class="numberLevels" type="number" placeholder="  Quantidade de níveis do quizz"></input>
+
+                <!-- </div> -->
+            </div>
+            <button class="proximaPagina" onclick="nextPage();">Prosseguir pra criar perguntas</button>
+        </div>
+        <div class="screen2CreateQuizz disappear">
+            <span class="title top">Crie suas perguntas</span>
+            <div class="whiteBoard telaAdaptavel">
+                <span class="title box">Pergunta 1</span>
+                <input class="textQuestion" type="text" placeholder="  Texto da pergunta"></input>
+                <input class="colorQuestion" type="text" placeholder="  Cor de fundo da pergunta"></input>
+                <span class="title box">Resposta correta</span>
+                <input class="correctAnswer" type="text" placeholder="  Resposta correta"></input>
+                <input class="urlImage" type="url" placeholder="  URL da imagem"></input>
+                <span class="title box">Respostas incorretas</span>
+                <div class="answerImage">
+                    <input class="incorrectAnswer" type="text" placeholder="  Resposta incorreta 1"></input>
+                    <input class="urlImage1" type="url" placeholder="  URL da imagem 1"></input>
+                </div>
+                <div class="answerImage">
+                    <input class="incorrectAnswer" type="text" placeholder="  Resposta incorreta 2"></input>
+                    <input class="urlImage2" type="url" placeholder="  URL da imagem 2"></input>
+                </div>
+            </div>
+            <div class="whiteBoard answerWait">
+                <div class="boxAnswerWait">
+                    <span class="title box">Pergunta 2</span>
+                    <img src="./images/Vector.png" />
+                </div>
+            </div>
+            <button class="proximaPagina levels" onclick="createLevels();">Prosseguir pra criar níveis</button>
+
+        </div>
+        <div class="screen3CreateQuizz disappear">
+            <span class="title top">Agora, decida os níveis!</span>
+            <div class="whiteBoard telaAdaptavel">
+                <span class="title box">Nível 1</span>
+                <input class="titleLevel" type="text" placeholder="  Título do nível"></input>
+                <input class="porcentageMin" type="number" placeholder="  % de acerto mínima"></input>
+                <input class="imageLevel" type="url" placeholder="  URL da imagem do nível"></input>
+                <textarea class="description" placeholder=" Descrição do nível"></textarea>
+            </div>
+            <div class="whiteBoard answerWait">
+            <div class="boxAnswerWait">
+                <span class="title box">Nível 2</span>
+                <img src="./images/Vector.png" />
+            </div>
+            </div>
+            <button class="proximaPagina endQuizz" onclick="endCreateQuizz();">Finalizar Quizz</button>
+        </div>
+        <div class="screenQuizzEnd disappear">
+            <span class="title top">Seu quizz está pronto!</span>
+            <div class="quizz">
+                <p class="escritaBrancaQuizz">Acerte os personagens corretos dos Simpsons e prove seu amor! </p>
+                <img src="./images/simpsons.png">
+            </div>
+            <button class="proximaPagina acessQuizz">Acessar Quizz</button>
+            <p class="escritaBoxCriarQuizz backHome">Voltar pra home</p>
+            
+
+>>>>>>> 41547232435df40c6fc3c017d6c61bdd56a0497d
         </div>
     </main>
 

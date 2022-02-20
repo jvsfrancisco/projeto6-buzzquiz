@@ -13,8 +13,7 @@
         flex-wrap: wrap;
     }
 
-    /* .barraSeusQuizzes{
-    } */
+    
 }
 
 @media(min-width:1051px) {
@@ -80,5 +79,16 @@
         font-size: 23px;
         line-height: 27px;
         margin: 0 auto 21px auto;
+    }
+}
+@media(min-width:1100px){
+    .whiteBoard{
+        width: 600px;
+    }
+    input{
+        width: 564px;
+    }
+    .description{
+        width: 564px;
     }
 }
