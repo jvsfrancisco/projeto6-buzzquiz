@@ -66,6 +66,7 @@ nav {
 }
 .backHome{
     color: #818181;
+    cursor: pointer;
 }
 
 .botaoBoxCriarQuizz {
@@ -158,6 +159,7 @@ nav {
     height: 30px;
     color: red;
     margin-top: 10px;
+    cursor:pointer;
 }
 .quizzUsuario{
 height: 100%;

@@ -24,7 +24,7 @@
     </header>
 
     <main>
-        <section class="home disappear ">
+        <section class="home  ">
             <nav class="primeiraQuizzUsuario ">
                 <div class="boxCriarQuizz ">
                     <p class="escritaBoxCriarQuizz">Você não criou nenhum quizz ainda :(</p>
@@ -50,7 +50,7 @@
 
 
             </nav>
-            <div class="divTituloLista disappear">
+            <div class="divTituloLista ">
                 <p class="tituloLista">Todos os Quizzes </p>
             </div>
             <div class="listaQuizz">
@@ -172,7 +172,7 @@
 
     </main>
     <main class="screensCreateQuizz ">
-        <div class="screen1CreateQuizz  ">
+        <div class="screen1CreateQuizz  disappear">
             <span class="title top">Comece pelo começo</span>
             <div class="whiteBoard tela1">
                 <!-- <div class="createQuestions"> -->
@@ -183,7 +183,7 @@
 
                 <!-- </div> -->
             </div>
-            <button class="proximaPagina">Prosseguir pra criar perguntas</button>
+            <button class="proximaPagina" onclick="nextPage();">Prosseguir pra criar perguntas</button>
         </div>
         <div class="screen2CreateQuizz disappear">
             <span class="title top">Crie suas perguntas</span>
@@ -210,7 +210,7 @@
                     <img src="./images/Vector.png" />
                 </div>
             </div>
-            <button class="proximaPagina levels">Prosseguir pra criar níveis</button>
+            <button class="proximaPagina levels" onclick="createLevels();">Prosseguir pra criar níveis</button>
 
         </div>
         <div class="screen3CreateQuizz disappear">
@@ -228,7 +228,7 @@
                 <img src="./images/Vector.png" />
             </div>
             </div>
-            <button class="proximaPagina endQuizz">Finalizar Quizz</button>
+            <button class="proximaPagina endQuizz" onclick="endCreateQuizz();">Finalizar Quizz</button>
         </div>
         <div class="screenQuizzEnd disappear">
             <span class="title top">Seu quizz está pronto!</span>

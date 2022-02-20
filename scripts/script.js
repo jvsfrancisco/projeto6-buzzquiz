@@ -1,10 +1,31 @@
 let allquizz = document.querySelector(".listaQuizz")
-const telaInicial = document.querySelector(".home")
 const quizzPage = document.querySelector(".quizz-page")
 
 
 function criarQuizz(acionado) {
-    telaInicial.classList.add("disappear")
+    const telaInicial = document.querySelector(".home");
+    telaInicial.classList.add("disappear");
+    const chamandoTela1= document.querySelector(".screen1CreateQuizz");
+    chamandoTela1.classList.remove("disappear");
+}
+function nextPage(){
+    const tirandoTela1= document.querySelector(".screen1CreateQuizz");
+    tirandoTela1.classList.add("disappear");
+    const chamandotela3=document.querySelector(".screen2CreateQuizz");
+    chamandotela3.classList.remove("disappear");
+
+}
+function createLevels(){
+    const tirandoTela2=document.querySelector(".screen2CreateQuizz");
+    tirandoTela2.classList.add("disappear");
+    const chamandoTela2=document.querySelector(".screen3CreateQuizz");
+    chamandoTela2.classList.remove("disappear");
+}
+function endCreateQuizz(){
+    const tirandoTela2=document.querySelector(".screen3CreateQuizz");
+    tirandoTela2.classList.add("disappear");
+     const chamandoEndQuizz= document.querySelector(".screenQuizzEnd")
+     chamandoEndQuizz.classList.remove("disappear")
 }
 
 homePageRender()
@@ -76,5 +97,6 @@ function openQuizzRender(quizz) {
     })
     console.log(quizzPage)
 }
+
 
 
