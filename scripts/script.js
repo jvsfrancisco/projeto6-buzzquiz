@@ -1,32 +1,58 @@
 let allquizz = document.querySelector(".listaQuizz")
 const quizzPage = document.querySelector(".quizz-page")
-
-
+const telaInicial = document.querySelector(".home");
+let inputTitleQuizz;
+let mainImage;
+let numberQuestions;
+let numberLevels;
 function criarQuizz(acionado) {
-    const telaInicial = document.querySelector(".home");
     telaInicial.classList.add("disappear");
-    const chamandoTela1= document.querySelector(".screen1CreateQuizz");
+    const chamandoTela1 = document.querySelector(".screen1CreateQuizz");
     chamandoTela1.classList.remove("disappear");
 }
-function nextPage(){
-    const tirandoTela1= document.querySelector(".screen1CreateQuizz");
+// "titleQuizz"
+// "urlImage"
+// "numberQuestions"
+//                 <input class="numberLevels" type="number" placeholder="  Quantidade de níveis do quizz"></input>
+// "numberLevels"
+function nextPage() {
+    const tirandoTela1 = document.querySelector(".screen1CreateQuizz");
     tirandoTela1.classList.add("disappear");
-    const chamandotela3=document.querySelector(".screen2CreateQuizz");
+    const chamandotela3 = document.querySelector(".screen2CreateQuizz");
     chamandotela3.classList.remove("disappear");
+    const inputTitle = document.querySelector(".titleQuizz");
+    inputTitleQuizz = inputTitle.value;
+    const inputUrl = document.querySelector(".urlImage");
+    mainImage = inputUrl.value;
+    const inputQuestions = document.querySelector(".numberQuestions");
+    numberQuestions = inputQuestions.value;
+    const inputLevel = document.querySelector(".numberLevels");
+    numberLevels = inputLevel.value;
+    console.log(inputTitleQuizz)
+    console.log(mainImage)
+    console.log(numberQuestions)
+    console.log(numberLevels)
 
 }
-function createLevels(){
-    const tirandoTela2=document.querySelector(".screen2CreateQuizz");
+function createLevels() {
+    const tirandoTela2 = document.querySelector(".screen2CreateQuizz");
     tirandoTela2.classList.add("disappear");
-    const chamandoTela2=document.querySelector(".screen3CreateQuizz");
+    const chamandoTela2 = document.querySelector(".screen3CreateQuizz");
     chamandoTela2.classList.remove("disappear");
 }
-function endCreateQuizz(){
-    const tirandoTela2=document.querySelector(".screen3CreateQuizz");
+function endCreateQuizz() {
+    const tirandoTela2 = document.querySelector(".screen3CreateQuizz");
     tirandoTela2.classList.add("disappear");
-     const chamandoEndQuizz= document.querySelector(".screenQuizzEnd")
-     chamandoEndQuizz.classList.remove("disappear")
+    const chamandoEndQuizz = document.querySelector(".screenQuizzEnd")
+    chamandoEndQuizz.classList.remove("disappear")
 }
+function backInitialScreen() {
+    const chamandoEndQuizz = document.querySelector(".screenQuizzEnd")
+    chamandoEndQuizz.classList.add("disappear")
+    telaInicial.classList.remove("disappear");
+
+}
+
 
 homePageRender()
 
