@@ -1,6 +1,6 @@
 let allquizz = document.querySelector(".listaQuizz")
 const telaInicial = document.querySelector(".home")
-let quizzPage = document.querySelector(".quizz-page")
+const quizzPage = document.querySelector(".quizz-page")
 
 
 function criarQuizz(acionado) {
@@ -43,6 +43,7 @@ function quizzGeral(quizz) {
 }
 
 function openQuizz(id) {
+    console.log(telaInicial)
     telaInicial.classList.add("disappear")
     const promise = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`)
     promise.then(openQuizzRender)
@@ -50,33 +51,30 @@ function openQuizz(id) {
 
 function openQuizzRender(quizz) {
     quizzPage.classList.remove("disappear")
-    console.log(quizz.data)
     let arrayQuizz = quizz.data
-
     quizzPage.innerHTML += `<nav class="sub-header">
             <p>${arrayQuizz.title}</p>
         </nav>`
     let arrayQuestions = arrayQuizz.questions
 
-    arrayQuestions.forEach(function () {
+    arrayQuestions.forEach(function (arrayQuestions) {
         quizzPage.innerHTML += `<nav class="questions">
             <article>
                 <div class="question-title">
                     <p>${arrayQuestions.title}</p>
                 </div>`
 
-        let arrayAnswers = arrayQuizz.questions.answers
+        let arrayAnswers = arrayQuestions.answers
 
-        arrayAnswers.forEach(function (){
+        arrayAnswers.forEach(function (arrayAnswers){
             quizzPage.innerHTML += `<div class="answer">
                         <div class="alternatives ${arrayAnswers.isCorrectAnswer}">
                             <img src="${arrayAnswers.image}" alt="simpson">
                             <p>${arrayAnswers.text}</p>
                         </div>`
         })
-        quizzPage.innerHTML += `</article>
-                            </nav>`
     })
+    console.log(quizzPage)
 }
 
 
