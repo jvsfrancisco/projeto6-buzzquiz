@@ -2,6 +2,7 @@ let sendQuizzApi={};
 let allquizz = document.querySelector(".listaQuizz")
 const quizzPage = document.querySelector(".quizz-page")
 const telaInicial = document.querySelector(".home");
+let arrayQuestions = null;
 let inputTitleQuizz;
 let mainImage;
 let numberQuestions;
@@ -287,7 +288,7 @@ function backInitialScreen() {
         telaInicial.classList.remove("disappear");
     const showQuizzUsuario=document.querySelector(".quizzUsuario")
     showQuizzUsuario.classList.remove("disappear")
-     const showQuizzes=document.querySelector(".listaSeusQuizzes")
+    const showQuizzes=document.querySelector(".listaSeusQuizzes")
     showQuizzes.innerHTML+=` <div class="quizz">
     <p class="escritaBrancaQuizz">${inputTitleQuizz}</p>
     <img src="${mainImage}">
@@ -357,7 +358,7 @@ function openQuizzRender(quiz) {
 const title = quiz.data.title;
 const image = quiz.data.image;
 
-let arrayQuestions = quiz.data.questions;
+arrayQuestions = quiz.data.questions;
 
 const quizzPage = document.querySelector(".quizz-page");
     quizzPage.innerHTML += `<article class="sub-header"> 
@@ -381,7 +382,6 @@ banner.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0
 
         for(let j = 0; j < answers.length; j++) { 
             let alternatives = document.querySelector(".questions:last-child .answer");
-            console.log(alternatives)
             alternatives.innerHTML += `<div class="alternatives" onclick="chooseAlternative(${answers[j].isCorrectAnswer},this,${i})">
                                     <img src="${answers[j].image}" alt="simpson">
                                     <p>${answers[j].text}</p>
@@ -401,20 +401,23 @@ function openQuizzError(error){
 
 function chooseAlternative(correct, alternative, index) {
     quizzPage.innerHTML += `<div class = "results"> </div>`
-    const allAlternatives = document.querySelector(`.questions:nth-child(${index}) .answer`)
-    alternative.classList.add(".choiced")
-    console.log(allAlternatives)
-    // for(let i = 0; i < allAlternatives.length; i++) {
-    //     if(!allAlternatives[i].classList.contain(".choiced")){
-    //         allAlternatives[i].classList.add(".other-choice")
-    //     }
-    //     if(arrayQuestions[index].answers[i].isCorrectAnswer){
-    //         allAlternatives[i].classList.add(".correct")
-    //     }
-    //     else{
-    //         allAlternatives[i].classList.add(".wrong")
-    //     }
+    
+    const allAlternatives = document.querySelectorAll(`.questions:nth-child(${index+2}) .answer`)
 
-    // }
+    alternative.classList.add("choiced")
+
+    for(let i = 0; i < allAlternatives.length; i++) {
+        console.log(allAlternatives)
+        if(arrayQuestions[index].answers[i].isCorrectAnswer){
+            allAlternatives[i].classList.add("correct")
+        }
+        else{
+            allAlternatives[i].classList.add("wrong")
+        }
+        if(!(allAlternatives[i].classList.contains("choiced"))){
+            allAlternatives[i].classList.add("other-choice")
+        }
+    
+}
 
 }
