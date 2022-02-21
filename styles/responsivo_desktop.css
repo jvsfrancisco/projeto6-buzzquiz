@@ -32,12 +32,16 @@
     }
 
     .listaSeusQuizzes{
-    width: 1051px;   
+    margin: 0px auto;
+    width: 1051px;  
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     }
 
     .barraSeusQuizzes{
         width: 1051px;
     }
+    .quizzUsuario{}
 
     .sub-header{ 
         height: 227px;
