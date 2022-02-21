@@ -9,14 +9,15 @@ let numberLevels;
 // página 2
 let textQuestion;
 let colorQuestion;
-let correctAnswer=[];
-let urlImageCorrect=[];
-let incorrectAnswer1=[];
-let urlImage1=[];
-let incorrectAnswer2=[];
-let urlImage2=[];
-let incorrectAnswer3=[];
-let urlImage3=[];
+let j=0;
+let correctAnswer=[j];
+let urlImageCorrect=[j];
+let incorrectAnswer1=[j];
+let urlImage1=[j];
+let incorrectAnswer2=[j];
+let urlImage2=[j];
+let incorrectAnswer3=[j];
+let urlImage3=[j];
 // página 3
 let titleLevel;
 let porcentageMin;
@@ -49,21 +50,21 @@ function createLevels() {
     const inputColor=document.querySelector(".colorQuestion")
     colorQuestion= inputColor.value;
     const correct=document.querySelector(".correctAnswer")
-    correctAnswer[0]= correct.value;
+    correctAnswer[j]= correct.value;
     const urlImage=document.querySelector(".urlImageCorrect")
-    urlImageCorrect[0]= urlImage.value;
+    urlImageCorrect[j]= urlImage.value;
     const incorrectAnswerInput1=document.querySelector(".incorrectAnswer1")
-    incorrectAnswer1[0]=incorrectAnswerInput1.value;
+    incorrectAnswer1[j]=incorrectAnswerInput1.value;
     const urlImage1Input=document.querySelector(".urlImage1")
-    urlImage1[0]=urlImage1Input.value;
+    urlImage1[j]=urlImage1Input.value;
     const incorrectAnswerInput2=document.querySelector(".incorrectAnswer2")
-    incorrectAnswer2[0]=incorrectAnswerInput2.value;
+    incorrectAnswer2[j]=incorrectAnswerInput2.value;
     const urlImage2Input=document.querySelector(".urlImage2")
-    urlImage2[0]=urlImage2Input.value;
+    urlImage2[j]=urlImage2Input.value;
     const incorrectAnswerInput3=document.querySelector(".incorrectAnswer3")
-    incorrectAnswer3[0]=incorrectAnswerInput3.value;
+    incorrectAnswer3[j]=incorrectAnswerInput3.value;
     const urlImage3Input=document.querySelector(".urlImage3")
-    urlImage3[0]=urlImage3Input.value;
+    urlImage3[j]=urlImage3Input.value;
     screen3();
     generatorLevel();
     console.log(correctAnswer[0])
