@@ -88,16 +88,16 @@ function endCreateQuizz() {
 
 }
 function generatorQuestion(){
- for (let i=2; i<=(numberQuestions);i++) {
+    for (let i=2; i<=(numberQuestions);i++) {
     let box=document.querySelector(".answerWait")
     box.innerHTML +=`
     <div class="boxAnswerWait">
                     <span class="title box">Pergunta ${i}</span>
                     <img src="./images/Vector.png" />
                 </div>`
- }
-
+    }
 } 
+
 function generatorLevel(){
     for (let i=2; i<=(numberLevels);i++) {
         let box=document.querySelector(".levelBox")
@@ -107,25 +107,26 @@ function generatorLevel(){
                 <img onclick="" src="./images/Vector.png" />
             </div>`
         
-     }
+    }
 }
+
 function chamandoCapaQuizz(){
 const box=document.querySelector(".screensCreateQuizz")
- box.innerHTML=`<div class="screenQuizzEnd ">
- <span class="title top">Seu quizz está pronto!</span>
- <div class="quizz">
-     <p class="escritaBrancaQuizz">${inputTitleQuizz}</p>
-     <img src="${mainImage}">
- </div>
- <button class="proximaPagina acessQuizz">Acessar Quizz</button>
- <p class="escritaBoxCriarQuizz backHome" onclick="backInitialScreen();">Voltar pra home</p>
- 
+    box.innerHTML=`<div class="screenQuizzEnd ">
+    <span class="title top">Seu quizz está pronto!</span>
+<div class="quizz">
+    <p class="escritaBrancaQuizz">${inputTitleQuizz}</p>
+    <img src="${mainImage}">
+</div>
+<button class="proximaPagina acessQuizz">Acessar Quizz</button>
+<p class="escritaBoxCriarQuizz backHome" onclick="backInitialScreen();">Voltar pra home</p>
+
 </div`
 }
 
 function screen1(){
 const listScreens=document.querySelector(".screensCreateQuizz")
- listScreens.innerHTML=`    <div class="screen1CreateQuizz  ">
+listScreens.innerHTML=`    <div class="screen1CreateQuizz  ">
     <span class="title top">Comece pelo começo</span>
     <div class="whiteBoard tela1">
         
@@ -270,38 +271,42 @@ function openQuizz(id) {
     telaInicial.classList.add("disappear")
     const promise = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`)
     promise.then(openQuizzRender)
-    // promise.catch(error)
+    promise.catch(openQuizzError)
 }
 
 function openQuizzRender(quiz) {
 
-const tituloQuizz = quiz.data.title;
-const imagemCapaQuizz = quiz.data.image;
-let perguntas = quiz.data.questions;
+const title = quiz.data.title;
+const image = quiz.data.image;
+
+let arrayQuestions = quiz.data.questions;
+
 const quizzPage = document.querySelector(".quizz-page");
     quizzPage.innerHTML += `<article class="sub-header"> 
-        <p>${tituloQuizz}</p>
+        <p>${title}</p>
     </article>`;
 
-const exibirCapaQuizz = document.querySelector(".sub-header");
-exibirCapaQuizz.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${imagemCapaQuizz})`;
+const banner = document.querySelector(".sub-header");
+banner.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${image})`;
 
-    for(let i = 0 ; i < perguntas.length; i++){
+    for(let i = 0 ; i < arrayQuestions.length; i++){
+
         quizzPage.innerHTML += `<article class="questions"> </article>`
         const quests = document.querySelector(".questions:last-child") ;
-        quests.innerHTML+= `<div class="question-title" style="background-color:${perguntas[i].color}">
-        <p>${perguntas[i].title}</p>
+        quests.innerHTML+= `<div class="question-title" style="background-color:${arrayQuestions[i].color}">
+        <p>${arrayQuestions[i].title}</p>
     </div>
     <div class= "answer"> </div>`;
-        let respostas = perguntas[i].answers;
-        respostas.sort(randomize);
+        let answers = arrayQuestions[i].answers;
+        answers.sort(randomize);
 
 
-        for(let j = 0; j < respostas.length; j++) { 
-            let alternativas = document.querySelector(".questions:last-child .answer");
-            alternativas.innerHTML += `<div class="alternatives ${respostas[j].isCorrectAnswer}">
-                                    <img src="${respostas[j].image}" alt="simpson">
-                                    <p>${respostas[j].text}</p>
+        for(let j = 0; j < answers.length; j++) { 
+            let alternatives = document.querySelector(".questions:last-child .answer");
+            console.log(alternatives)
+            alternatives.innerHTML += `<div class="alternatives" onclick="chooseAlternative(${answers[j].isCorrectAnswer},this,${i})">
+                                    <img src="${answers[j].image}" alt="simpson">
+                                    <p>${answers[j].text}</p>
                                 </div>`;
         }                       
     }
@@ -311,38 +316,27 @@ function randomize() {
 	return Math.random() - 0.5; 
 }
 
+function openQuizzError(error){
+    console.log(error)
+    alert("Ops, aconteceu algum problema... :(")
+}
 
+function chooseAlternative(correct, alternative, index) {
+    quizzPage.innerHTML += `<div class = "results"> </div>`
+    const allAlternatives = document.querySelector(`.questions:nth-child(${index}) .answer`)
+    alternative.classList.add(".choiced")
+    console.log(allAlternatives)
+    // for(let i = 0; i < allAlternatives.length; i++) {
+    //     if(!allAlternatives[i].classList.contain(".choiced")){
+    //         allAlternatives[i].classList.add(".other-choice")
+    //     }
+    //     if(arrayQuestions[index].answers[i].isCorrectAnswer){
+    //         allAlternatives[i].classList.add(".correct")
+    //     }
+    //     else{
+    //         allAlternatives[i].classList.add(".wrong")
+    //     }
 
+    // }
 
-
-
-
-    // quizzPage.innerHTML += `<nav class="sub-header">
-    //         <p>${arrayQuizz.title}</p>
-    //     </nav>`
-    // let arrayQuestions = arrayQuizz.questions
-
-    // arrayQuestions.forEach(function (arrayQuestions) {
-    //     quizzPage.innerHTML += `<nav class="questions"> </nav>`
-
-    //     let questions = document.querySelector(".questions")
-    //     questions.innerHTML += `<div class="question-title">
-    //     <p>${arrayQuestions.title}</p>
-    //     </div>
-    //     <div class = "questions"> </div>`
-    //     let i = 0
-    //     i ++
-    //     let arrayAnswers = arrayQuestions.answers
-
-    //     arrayAnswers.forEach(function (arrayAnswers) {
-    //         let i = 0
-    //         i ++
-    //         let alternatives = document.querySelector(".questions")
-    //         alternatives.innerHTML += `
-    //                     <div class="alternatives ${arrayAnswers.isCorrectAnswer}">
-    //                         <img src="${arrayAnswers.image}" alt="simpson">
-    //                         <p>${arrayAnswers.text}</p>
-    //                     </div>`
-    //     })
-    // })
-    // console.log(quizzPage)
+}
