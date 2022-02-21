@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-
+    overflow-wrap: break-word;
 }
 
 body {
@@ -370,6 +370,7 @@ input{
     margin-top: 24px;
 }
 .boxAnswerWait{
+    margin-top: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
