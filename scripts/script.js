@@ -9,14 +9,14 @@ let numberLevels;
 // página 2
 let textQuestion;
 let colorQuestion;
-let correctAnswer;
-let urlImageCorrect;
-let incorrectAnswer1;
-let urlImage1;
-let incorrectAnswer2;
-let urlImage2;
-let incorrectAnswer3;
-let urlImage3;
+let correctAnswer=[];
+let urlImageCorrect=[];
+let incorrectAnswer1=[];
+let urlImage1=[];
+let incorrectAnswer2=[];
+let urlImage2=[];
+let incorrectAnswer3=[];
+let urlImage3=[];
 // página 3
 let titleLevel;
 let porcentageMin;
@@ -49,23 +49,24 @@ function createLevels() {
     const inputColor=document.querySelector(".colorQuestion")
     colorQuestion= inputColor.value;
     const correct=document.querySelector(".correctAnswer")
-    correctAnswer= correct.value;
+    correctAnswer[0]= correct.value;
     const urlImage=document.querySelector(".urlImageCorrect")
-    urlImageCorrect= urlImage.value;
+    urlImageCorrect[0]= urlImage.value;
     const incorrectAnswerInput1=document.querySelector(".incorrectAnswer1")
-    incorrectAnswer1=incorrectAnswerInput1.value;
+    incorrectAnswer1[0]=incorrectAnswerInput1.value;
     const urlImage1Input=document.querySelector(".urlImage1")
-    urlImage1=urlImage1Input.value;
+    urlImage1[0]=urlImage1Input.value;
     const incorrectAnswerInput2=document.querySelector(".incorrectAnswer2")
-    incorrectAnswer2=incorrectAnswerInput2.value;
+    incorrectAnswer2[0]=incorrectAnswerInput2.value;
     const urlImage2Input=document.querySelector(".urlImage2")
-    urlImage2=urlImage2Input.value;
+    urlImage2[0]=urlImage2Input.value;
     const incorrectAnswerInput3=document.querySelector(".incorrectAnswer3")
-    incorrectAnswer3=incorrectAnswerInput3.value;
+    incorrectAnswer3[0]=incorrectAnswerInput3.value;
     const urlImage3Input=document.querySelector(".urlImage3")
-    urlImage3=urlImage3Input.value;
+    urlImage3[0]=urlImage3Input.value;
     screen3();
     generatorLevel();
+    console.log(correctAnswer[0])
 }
 function endCreateQuizz() {
     const tirandoTela2 = document.querySelector(".screen3CreateQuizz");
@@ -107,6 +108,10 @@ function generatorLevel(){
         
      }
 }
+function acessQuizz(){
+
+
+}
 function chamandoCapaQuizz(){
 const box=document.querySelector(".screensCreateQuizz")
  box.innerHTML=`<div class="screenQuizzEnd ">
@@ -115,7 +120,7 @@ const box=document.querySelector(".screensCreateQuizz")
      <p class="escritaBrancaQuizz">${inputTitleQuizz}</p>
      <img src="${mainImage}">
  </div>
- <button class="proximaPagina acessQuizz">Acessar Quizz</button>
+ <button class="proximaPagina acessQuizz" onclick="acessQuizz();">Acessar Quizz</button>
  <p class="escritaBoxCriarQuizz backHome" onclick="backInitialScreen();">Voltar pra home</p>
  
 </div`
@@ -208,10 +213,20 @@ function sendApi(){
      console.log(sendQuizzApi.title)
 }
 function backInitialScreen() {
+    const disappearBoxCriarQuizz=document.querySelector(".boxCriarQuizz")
+    disappearBoxCriarQuizz.classList.add("disappear");
+    const quizzUsuario=document.querySelector(".primeiraQuizzUsuario")
+    quizzUsuario.classList.add("disappear")
     const chamandoEndQuizz = document.querySelector(".screenQuizzEnd")
     chamandoEndQuizz.classList.add("disappear")
         telaInicial.classList.remove("disappear");
-    
+    const showQuizzUsuario=document.querySelector(".quizzUsuario")
+    showQuizzUsuario.classList.remove("disappear")
+     const showQuizzes=document.querySelector(".listaSeusQuizzes")
+    showQuizzes.innerHTML+=` <div class="quizz">
+    <p class="escritaBrancaQuizz">${inputTitleQuizz}</p>
+    <img src="${mainImage}">
+</div>`
     }
 function checkInformation(){
     if (!(inputTitleQuizz.length >= 20 && inputTitleQuizz.length <= 65)) {
