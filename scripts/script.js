@@ -28,8 +28,6 @@ function criarQuizz(acionado) {
     screen1();
 }
 function nextPage() {
-    const tirandoTela1 = document.querySelector(".screen1CreateQuizz");
-    tirandoTela1.classList.add("disappear");
     const chamandotela3 = document.querySelector(".screen2CreateQuizz");
     const inputTitle = document.querySelector(".titleQuizz");
     inputTitleQuizz = inputTitle.value;
@@ -39,8 +37,7 @@ function nextPage() {
     numberQuestions = inputQuestions.value;
     const inputLevel = document.querySelector(".numberLevels");
     numberLevels = inputLevel.value;
-    generatorQuestion();
-    screen2();
+    checkInformation();
 
 }
 function createLevels() {
@@ -67,8 +64,8 @@ function createLevels() {
     incorrectAnswer3=incorrectAnswerInput3.value;
     const urlImage3Input=document.querySelector(".urlImage3")
     urlImage3=urlImage3Input.value;
-    generatorLevel();
     screen3();
+    generatorLevel();
 }
 function endCreateQuizz() {
     const tirandoTela2 = document.querySelector(".screen3CreateQuizz");
@@ -105,8 +102,9 @@ function generatorLevel(){
         box.innerHTML +=`
         <div class="boxAnswerWait">
                 <span class="title box">Nível ${i}</span>
-                <img src="./images/Vector.png" />
+                <img onclick="" src="./images/Vector.png" />
             </div>`
+        
      }
 }
 function chamandoCapaQuizz(){
@@ -138,6 +136,8 @@ const listScreens=document.querySelector(".screensCreateQuizz")
 </div>`
 }
 function screen2(){
+    const tirandoTela1 = document.querySelector(".screen1CreateQuizz");
+    tirandoTela1.classList.add("disappear");
     const listScreens=document.querySelector(".screensCreateQuizz")
     listScreens.innerHTML=`
     <div class="screen2CreateQuizz ">
@@ -213,6 +213,21 @@ function backInitialScreen() {
         telaInicial.classList.remove("disappear");
     
     }
+function checkInformation(){
+    if (!(inputTitleQuizz.length >= 20 && inputTitleQuizz.length <= 65)) {
+        alert("O titulo tem que ter entre 20 e 65 caracteres");   
+    }
+    if (numberQuestions < 3) {
+        alert("A quantidade de perguntas tem de ser ao menos 3");
+    }
+    if (numberLevels < 2) {
+        alert("A quantidade de niveis tem de ser ao menos 2");
+    }
+    if ((inputTitleQuizz.length >= 20 && inputTitleQuizz.length <= 65) && (numberQuestions >= 3) && (numberLevels >= 2)) {
+        screen2();
+        generatorQuestion();
+    }
+}
 
 homePageRender()
 
