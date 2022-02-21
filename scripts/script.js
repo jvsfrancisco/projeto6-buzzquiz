@@ -1,9 +1,9 @@
 let allquizz = document.querySelector(".listaQuizz")
 const quizzPage = document.querySelector(".quizz-page")
+const telaInicial = document.querySelector(".home")
 
 
 function criarQuizz(acionado) {
-    const telaInicial = document.querySelector(".home");
     telaInicial.classList.add("disappear");
     const chamandoTela1= document.querySelector(".screen1CreateQuizz");
     chamandoTela1.classList.remove("disappear");
@@ -24,8 +24,8 @@ function createLevels(){
 function endCreateQuizz(){
     const tirandoTela2=document.querySelector(".screen3CreateQuizz");
     tirandoTela2.classList.add("disappear");
-     const chamandoEndQuizz= document.querySelector(".screenQuizzEnd")
-     chamandoEndQuizz.classList.remove("disappear")
+    const chamandoEndQuizz= document.querySelector(".screenQuizzEnd")
+    chamandoEndQuizz.classList.remove("disappear")
 }
 
 homePageRender()
@@ -64,37 +64,82 @@ function quizzGeral(quizz) {
 }
 
 function openQuizz(id) {
-    console.log(telaInicial)
     telaInicial.classList.add("disappear")
     const promise = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`)
     promise.then(openQuizzRender)
+    // promise.catch(error)
 }
 
-function openQuizzRender(quizz) {
-    quizzPage.classList.remove("disappear")
-    let arrayQuizz = quizz.data
-    quizzPage.innerHTML += `<nav class="sub-header">
-            <p>${arrayQuizz.title}</p>
-        </nav>`
-    let arrayQuestions = arrayQuizz.questions
+function openQuizzRender(quiz) {
 
-    arrayQuestions.forEach(function (arrayQuestions) {
-        quizzPage.innerHTML += `<nav class="questions">
-            <article>
-                <div class="question-title">
-                    <p>${arrayQuestions.title}</p>
-                </div>`
+const tituloQuizz = quiz.data.title;
+const imagemCapaQuizz = quiz.data.image;
+let perguntas = quiz.data.questions;
+const quizzPage = document.querySelector(".quizz-page");
+    quizzPage.innerHTML += `<article class="sub-header"> 
+        <p>${tituloQuizz}</p>
+    </article>`;
 
-        let arrayAnswers = arrayQuestions.answers
+const exibirCapaQuizz = document.querySelector(".sub-header");
+exibirCapaQuizz.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${imagemCapaQuizz})`;
 
-        arrayAnswers.forEach(function (arrayAnswers) {
-            quizzPage.innerHTML += `<div class="answer">
-                        <div class="alternatives ${arrayAnswers.isCorrectAnswer}">
-                            <img src="${arrayAnswers.image}" alt="simpson">
-                            <p>${arrayAnswers.text}</p>
-                        </div>`
-        })
-    })
-    console.log(quizzPage)
+    for(let i = 0 ; i < perguntas.length; i++){
+        quizzPage.innerHTML += `<article class="questions"> </article>`
+        const quests = document.querySelector(".questions:last-child") ;
+        quests.innerHTML+= `<div class="question-title" style="background-color:${perguntas[i].color}">
+        <p>${perguntas[i].title}</p>
+    </div>
+    <div class= "answer"> </div>`;
+        let respostas = perguntas[i].answers;
+        respostas.sort(randomize);
+
+
+        for(let j = 0; j < respostas.length; j++) { 
+            let alternativas = document.querySelector(".questions:last-child .answer");
+            alternativas.innerHTML += `<div class="alternatives ${respostas[j].isCorrectAnswer}">
+                                    <img src="${respostas[j].image}" alt="simpson">
+                                    <p>${respostas[j].text}</p>
+                                </div>`;
+        }                       
+    }
 }
 
+function randomize() { 
+	return Math.random() - 0.5; 
+}
+
+
+
+
+
+
+
+    // quizzPage.innerHTML += `<nav class="sub-header">
+    //         <p>${arrayQuizz.title}</p>
+    //     </nav>`
+    // let arrayQuestions = arrayQuizz.questions
+
+    // arrayQuestions.forEach(function (arrayQuestions) {
+    //     quizzPage.innerHTML += `<nav class="questions"> </nav>`
+
+    //     let questions = document.querySelector(".questions")
+    //     questions.innerHTML += `<div class="question-title">
+    //     <p>${arrayQuestions.title}</p>
+    //     </div>
+    //     <div class = "questions"> </div>`
+    //     let i = 0
+    //     i ++
+    //     let arrayAnswers = arrayQuestions.answers
+
+    //     arrayAnswers.forEach(function (arrayAnswers) {
+    //         let i = 0
+    //         i ++
+    //         let alternatives = document.querySelector(".questions")
+    //         alternatives.innerHTML += `
+    //                     <div class="alternatives ${arrayAnswers.isCorrectAnswer}">
+    //                         <img src="${arrayAnswers.image}" alt="simpson">
+    //                         <p>${arrayAnswers.text}</p>
+    //                     </div>`
+    //     })
+    // })
+    // console.log(quizzPage)
