@@ -31,7 +31,7 @@
                     <button class="botaoBoxCriarQuizz" onclick="criarQuizz()">Criar Quizz</button>
                 </div>
             </nav>
-            <nav class="quizzUsuario">
+            <nav class="quizzUsuario disappear">
                 <div class="barraSeusQuizzes ">
                     <p class="tituloLista ">Seus Quizzes </p>
                     <ion-icon class="plus" onclick="criarQuizz(this)" name="add-circle"></ion-icon>
@@ -78,19 +78,18 @@
         <section class="quizz-page">
             
         </section>
-    </main>
 
     <main class="screensCreateQuizz ">
         <div class="screen1CreateQuizz  disappear">
             <span class="title top">Comece pelo começo</span>
             <div class="whiteBoard tela1">
-                <!-- <div class="createQuestions"> -->
+                
                 <input class="titleQuizz" type="text" placeholder="  Título do seu quizz"></input>
                 <input class="urlImage" type="url" placeholder="  URL da imagem do seu quizz"></input>
                 <input class="numberQuestions" type="number" placeholder="  Quantidade de perguntas do quizz"></input>
                 <input class="numberLevels" type="number" placeholder="  Quantidade de níveis do quizz"></input>
 
-                <!-- </div> -->
+              
             </div>
             <button class="proximaPagina" onclick="nextPage();">Prosseguir pra criar perguntas</button>
         </div>
@@ -102,22 +101,23 @@
                 <input class="colorQuestion" type="text" placeholder="  Cor de fundo da pergunta"></input>
                 <span class="title box">Resposta correta</span>
                 <input class="correctAnswer" type="text" placeholder="  Resposta correta"></input>
-                <input class="urlImage" type="url" placeholder="  URL da imagem"></input>
+                <input class="urlImageCorrect" type="url" placeholder="  URL da imagem"></input>
                 <span class="title box">Respostas incorretas</span>
                 <div class="answerImage">
-                    <input class="incorrectAnswer" type="text" placeholder="  Resposta incorreta 1"></input>
+                    <input class="incorrectAnswer1" type="text" placeholder="  Resposta incorreta 1"></input>
                     <input class="urlImage1" type="url" placeholder="  URL da imagem 1"></input>
                 </div>
                 <div class="answerImage">
-                    <input class="incorrectAnswer" type="text" placeholder="  Resposta incorreta 2"></input>
+                    <input class="incorrectAnswer2" type="text" placeholder="  Resposta incorreta 2"></input>
                     <input class="urlImage2" type="url" placeholder="  URL da imagem 2"></input>
+                </div>
+                <div class="answerImage">
+                    <input class="incorrectAnswer3" type="text" placeholder="  Resposta incorreta 3"></input>
+                    <input class="urlImage3" type="url" placeholder="  URL da imagem 3"></input>
                 </div>
             </div>
             <div class="whiteBoard answerWait">
-                <div class="boxAnswerWait">
-                    <span class="title box">Pergunta 2</span>
-                    <img src="./images/Vector.png" />
-                </div>
+            
             </div>
             <button class="proximaPagina levels" onclick="createLevels();">Prosseguir pra criar níveis</button>
 
