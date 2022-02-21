@@ -28,20 +28,20 @@
             <nav class="primeiraQuizzUsuario ">
                 <div class="boxCriarQuizz ">
                     <p class="escritaBoxCriarQuizz">Você não criou nenhum quizz ainda :(</p>
-                    <button class="botaoBoxCriarQuizz" onclick="criarQuizz()">Criar Quizz</button>
+                    <button class="botaoBoxCriarQuizz" data-identifier="create-quizz" onclick="criarQuizz()">Criar Quizz</button>
                 </div>
             </nav>
             <nav class="quizzUsuario disappear">
                 <div class="barraSeusQuizzes ">
                     <p class="tituloLista ">Seus Quizzes </p>
-                    <ion-icon class="plus" onclick="criarQuizz(this)" name="add-circle"></ion-icon>
+                    <ion-icon class="plus" onclick="criarQuizz(this)"data-identifier="create-quizz" name="add-circle"></ion-icon>
                 </div>
-                <div class="listaSeusQuizzes"></div>
+                <div class="listaSeusQuizzes" data-identifier="user-quizzes"></div>
             </nav>
             <div class="divTituloLista">
                 <p class="tituloLista">Todos os Quizzes </p>
             </div>
-            <div class="listaQuizz">
+            <div class="listaQuizz" data-identifier="general-quizzes">
             </div>
         </section>
 
@@ -55,9 +55,9 @@
             <div class="whiteBoard tela1">
                 
                 <input class="titleQuizz" type="text" placeholder="  Título do seu quizz"></input>
-                <input class="urlImage" type="url" placeholder="  URL da imagem do seu quizz"></input>
-                <input class="numberQuestions" type="number" placeholder="  Quantidade de perguntas do quizz"></input>
-                <input class="numberLevels" type="number" placeholder="  Quantidade de níveis do quizz"></input>
+                <input class="urlImage" type="url"data-identifier="answer" placeholder="  URL da imagem do seu quizz"></input>
+                <input class="numberQuestions" type="number"data-identifier="answer" placeholder="  Quantidade de perguntas do quizz"></input>
+                <input class="numberLevels" type="number"data-identifier="answer" placeholder="  Quantidade de níveis do quizz"></input>
 
               
             </div>
@@ -67,23 +67,23 @@
             <span class="title top">Crie suas perguntas</span>
             <div class="whiteBoard telaAdaptavel">
                 <span class="title box">Pergunta 1</span>
-                <input class="textQuestion" type="text" placeholder="  Texto da pergunta"></input>
-                <input class="colorQuestion" type="text" placeholder="  Cor de fundo da pergunta"></input>
+                <input class="textQuestion" type="text"data-identifier="answer" placeholder="  Texto da pergunta"></input>
+                <input class="colorQuestion" type="text"data-identifier="answer" placeholder="  Cor de fundo da pergunta"></input>
                 <span class="title box">Resposta correta</span>
-                <input class="correctAnswer" type="text" placeholder="  Resposta correta"></input>
-                <input class="urlImageCorrect" type="url" placeholder="  URL da imagem"></input>
+                <input class="correctAnswer" type="text"data-identifier="answer" placeholder="  Resposta correta"></input>
+                <input class="urlImageCorrect" type="url"data-identifier="answer" placeholder="  URL da imagem"></input>
                 <span class="title box">Respostas incorretas</span>
                 <div class="answerImage">
-                    <input class="incorrectAnswer1" type="text" placeholder="  Resposta incorreta 1"></input>
-                    <input class="urlImage1" type="url" placeholder="  URL da imagem 1"></input>
+                    <input class="incorrectAnswer1" type="text"data-identifier="answer" placeholder="  Resposta incorreta 1"></input>
+                    <input class="urlImage1" type="url"data-identifier="answer" placeholder="  URL da imagem 1"></input>
                 </div>
                 <div class="answerImage">
-                    <input class="incorrectAnswer2" type="text" placeholder="  Resposta incorreta 2"></input>
-                    <input class="urlImage2" type="url" placeholder="  URL da imagem 2"></input>
+                    <input class="incorrectAnswer2" type="text"data-identifier="answer" placeholder="  Resposta incorreta 2"></input>
+                    <input class="urlImage2" type="url"data-identifier="answer" placeholder="  URL da imagem 2"></input>
                 </div>
                 <div class="answerImage">
-                    <input class="incorrectAnswer3" type="text" placeholder="  Resposta incorreta 3"></input>
-                    <input class="urlImage3" type="url" placeholder="  URL da imagem 3"></input>
+                    <input class="incorrectAnswer3" type="text"data-identifier="answer" placeholder="  Resposta incorreta 3"></input>
+                    <input class="urlImage3" type="url"data-identifier="answer" placeholder="  URL da imagem 3"></input>
                 </div>
             </div>
             <div class="whiteBoard answerWait">
@@ -96,9 +96,9 @@
             <span class="title top">Agora, decida os níveis!</span>
             <div class="whiteBoard telaAdaptavel">
                 <span class="title box">Nível 1</span>
-                <input class="titleLevel" type="text" placeholder="  Título do nível"></input>
-                <input class="porcentageMin" type="number" placeholder="  % de acerto mínima"></input>
-                <input class="imageLevel" type="url" placeholder="  URL da imagem do nível"></input>
+                <input class="titleLevel" type="text"data-identifier="answer" placeholder="  Título do nível"></input>
+                <input class="porcentageMin" type="number"data-identifier="answer" placeholder="  % de acerto mínima"></input>
+                <input class="imageLevel" type="url" data-identifier="answer" placeholder="  URL da imagem do nível"></input>
                 <textarea class="description" placeholder=" Descrição do nível"></textarea>
             </div>
             <div class="whiteBoard answerWait">
@@ -107,7 +107,7 @@
                     <img src="./images/Vector.png" />
                 </div>
             </div>
-            <button class="proximaPagina endQuizz" onclick="endCreateQuizz();">Finalizar Quizz</button>
+            <button class="proximaPagina endQuizz" data-identifier="expand" onclick="endCreateQuizz();">Finalizar Quizz</button>
         </div>
         <div class="screenQuizzEnd disappear">
             <span class="title top">Seu quizz está pronto!</span>

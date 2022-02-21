@@ -7,22 +7,22 @@ let mainImage;
 let numberQuestions;
 let numberLevels;
 // página 2
-let textQuestion;
-let colorQuestion;
-let j=0;
-let correctAnswer=[j];
-let urlImageCorrect=[j];
-let incorrectAnswer1=[j];
-let urlImage1=[j];
-let incorrectAnswer2=[j];
-let urlImage2=[j];
-let incorrectAnswer3=[j];
-let urlImage3=[j];
+let k=0;
+let textQuestion=[k];
+let colorQuestion=[k];
+let correctAnswer=[k];
+let urlImageCorrect=[k];
+let incorrectAnswer1=[k];
+let urlImage1=[k];
+let incorrectAnswer2=[k];
+let urlImage2=[k];
+let incorrectAnswer3=[k];
+let urlImage3=[k];
 // página 3
-let titleLevel;
-let porcentageMin;
-let imageLevel;
-let description;
+let titleLevel=[k];
+let porcentageMin=[k];
+let imageLevel=[k];
+let description=[k];
 
 function criarQuizz(acionado) {
     telaInicial.classList.add("disappear");
@@ -40,32 +40,31 @@ function nextPage() {
     const inputLevel = document.querySelector(".numberLevels");
     numberLevels = inputLevel.value;
     checkInformation();
-
 }
 function createLevels() {
     const tirandoTela2 = document.querySelector(".screen2CreateQuizz");
     tirandoTela2.classList.add("disappear");
     const chamandoTela2 = document.querySelector(".screen3CreateQuizz");
     const inputTextQuestions=document.querySelector(".textQuestion")
-    textQuestion=inputTextQuestions.value;
+    textQuestion[k]=inputTextQuestions.value;
     const inputColor=document.querySelector(".colorQuestion")
-    colorQuestion= inputColor.value;
+    colorQuestion[k]= inputColor.value;
     const correct=document.querySelector(".correctAnswer")
-    correctAnswer[j]= correct.value;
+    correctAnswer[k]= correct.value;
     const urlImage=document.querySelector(".urlImageCorrect")
-    urlImageCorrect[j]= urlImage.value;
+    urlImageCorrect[k]= urlImage.value;
     const incorrectAnswerInput1=document.querySelector(".incorrectAnswer1")
-    incorrectAnswer1[j]=incorrectAnswerInput1.value;
+    incorrectAnswer1[k]=incorrectAnswerInput1.value;
     const urlImage1Input=document.querySelector(".urlImage1")
-    urlImage1[j]=urlImage1Input.value;
+    urlImage1[k]=urlImage1Input.value;
     const incorrectAnswerInput2=document.querySelector(".incorrectAnswer2")
-    incorrectAnswer2[j]=incorrectAnswerInput2.value;
+    incorrectAnswer2[k]=incorrectAnswerInput2.value;
     const urlImage2Input=document.querySelector(".urlImage2")
-    urlImage2[j]=urlImage2Input.value;
+    urlImage2[k]=urlImage2Input.value;
     const incorrectAnswerInput3=document.querySelector(".incorrectAnswer3")
-    incorrectAnswer3[j]=incorrectAnswerInput3.value;
+    incorrectAnswer3[k]=incorrectAnswerInput3.value;
     const urlImage3Input=document.querySelector(".urlImage3")
-    urlImage3[j]=urlImage3Input.value;
+    urlImage3[k]=urlImage3Input.value;
     screen3();
     generatorLevel();
     console.log(correctAnswer[0])
@@ -77,29 +76,46 @@ function endCreateQuizz() {
     const chamandoEndQuizz = document.querySelector(".screenQuizzEnd")
     // chamandoEndQuizz.classList.remove("disappear")
     const inputTitleLevel = document.querySelector(".titleLevel")
-    titleLevel = inputTitleLevel.value;
+    titleLevel[k] = inputTitleLevel.value;
     const inputPorcentageMin= document.querySelector(".porcentageMin")
-    porcentageMin=inputPorcentageMin.value;
+    porcentageMin[k]=inputPorcentageMin.value;
     const inputImageLevel= document.querySelector(".imageLevel")
-    imageLevel=inputImageLevel.value;
+    imageLevel[k]=inputImageLevel.value;
     const inputDescription= document.querySelector(".description")
-    description=inputDescription.value;
+    description[k]=inputDescription.value;
     console.log(description)
     chamandoCapaQuizz();
     sendApi();
-
+    const promisse=axios.post("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes",sendQuizzApi)
+    promisse.then(deuBom)
+    promisse.catch(deuRuim)
 }
+function deuBom(bom){
+    alert("Seu quizz foi criado com sucesso, se divirta!!");
+}
+function deuRuim(ruim){
+    alert("algum procedimento foi feito inadequadamente, por favor, tente novamente :)");
+}
+
 function generatorQuestion(){
  for (let i=2; i<=(numberQuestions);i++) {
     let box=document.querySelector(".answerWait")
     box.innerHTML +=`
-    <div class="boxAnswerWait">
+    <div class="boxAnswerWait ${i}">
                     <span class="title box">Pergunta ${i}</span>
-                    <img src="./images/Vector.png" />
+                    <img onclick="tentandoFazerOutrasPerguntas(this);"src="./images/Vector.png" />
                 </div>`
  }
 
 } 
+function tentandoFazerOutrasPerguntas(boxselecionado){
+ 
+   let l=0;
+   l++;
+    screen2();
+
+
+}
 function generatorLevel(){
     for (let i=2; i<=(numberLevels);i++) {
         let box=document.querySelector(".levelBox")
@@ -119,7 +135,7 @@ function chamandoCapaQuizz(){
 const box=document.querySelector(".screensCreateQuizz")
  box.innerHTML=`<div class="screenQuizzEnd ">
  <span class="title top">Seu quizz está pronto!</span>
- <div class="quizz">
+ <div class="quizz" data-identifier="quizz-card">
      <p class="escritaBrancaQuizz">${inputTitleQuizz}</p>
      <img src="${mainImage}">
  </div>
@@ -143,32 +159,35 @@ const listScreens=document.querySelector(".screensCreateQuizz")
     <button class="proximaPagina" onclick="nextPage();">Prosseguir pra criar perguntas</button>
 </div>`
 }
-function screen2(){
+function tiratela1(){
     const tirandoTela1 = document.querySelector(".screen1CreateQuizz");
     tirandoTela1.classList.add("disappear");
+}
+function screen2(){ 
+    k++;
     const listScreens=document.querySelector(".screensCreateQuizz")
     listScreens.innerHTML=`
     <div class="screen2CreateQuizz ">
             <span class="title top">Crie suas perguntas</span>
             <div class="whiteBoard telaAdaptavel">
-                <span class="title box">Pergunta 1</span>
-                <input class="textQuestion" type="text" placeholder="  Texto da pergunta"></input>
-                <input class="colorQuestion" type="text" placeholder="  Cor de fundo da pergunta"></input>
+                <span class="title box">Pergunta ${k}</span>
+                <input class="textQuestion"data-identifier="question" type="text" placeholder="  Texto da pergunta"></input>
+                <input class="colorQuestion"data-identifier="question" type="text" placeholder="  Cor de fundo da pergunta"></input>
                 <span class="title box">Resposta correta</span>
-                <input class="correctAnswer" type="text" placeholder="  Resposta correta"></input>
-                <input class="urlImageCorrect" type="url" placeholder="  URL da imagem"></input>
+                <input class="correctAnswer"data-identifier="question" type="text" placeholder="  Resposta correta"></input>
+                <input class="urlImageCorrect"data-identifier="question" type="url" placeholder="  URL da imagem"></input>
                 <span class="title box">Respostas incorretas</span>
                 <div class="answerImage">
-                    <input class="incorrectAnswer1" type="text" placeholder="  Resposta incorreta 1"></input>
-                    <input class="urlImage1" type="url" placeholder="  URL da imagem 1"></input>
+                    <input class="incorrectAnswer1"data-identifier="question" type="text" placeholder="  Resposta incorreta 1"></input>
+                    <input class="urlImage1" type="url"data-identifier="question" placeholder="  URL da imagem 1"></input>
                 </div>
                 <div class="answerImage">
-                    <input class="incorrectAnswer2" type="text" placeholder="  Resposta incorreta 2"></input>
-                    <input class="urlImage2" type="url" placeholder="  URL da imagem 2"></input>
+                    <input class="incorrectAnswer2" data-identifier="question" type="text" placeholder="  Resposta incorreta 2"></input>
+                    <input class="urlImage2" type="url"data-identifier="question" placeholder="  URL da imagem 2"></input>
                 </div>
                 <div class="answerImage">
-                    <input class="incorrectAnswer3" type="text" placeholder="  Resposta incorreta 3"></input>
-                    <input class="urlImage3" type="url" placeholder="  URL da imagem 3"></input>
+                    <input class="incorrectAnswer3" data-identifier="question" type="text" placeholder="  Resposta incorreta 3"></input>
+                    <input class="urlImage3" data-identifier="question" type="url" placeholder="  URL da imagem 3"></input>
                 </div>
             </div>
             <div class="whiteBoard answerWait">
@@ -177,18 +196,21 @@ function screen2(){
             <button class="proximaPagina levels" onclick="createLevels();">Prosseguir pra criar níveis</button>
 
         </div>`
-
+        console.log(textQuestion[k])
+    console.log(colorQuestion[k])
+    console.log(correctAnswer[k])
+    console.log(urlImageCorrect[k])
 }
 function screen3(){
     const listScreens=document.querySelector(".screensCreateQuizz")
 listScreens.innerHTML=`  <div class="screen3CreateQuizz ">
 <span class="title top">Agora, decida os níveis!</span>
 <div class="whiteBoard telaAdaptavel">
-    <span class="title box">Nível 1</span>
-    <input class="titleLevel" type="text" placeholder="  Título do nível"></input>
-    <input class="porcentageMin" type="number" placeholder="  % de acerto mínima"></input>
-    <input class="imageLevel" type="url" placeholder="  URL da imagem do nível"></input>
-    <textarea class="description" placeholder=" Descrição do nível"></textarea>
+    <span  class="title box">Nível 1</span>
+    <input data-identifier="level" class="titleLevel" type="text" placeholder="  Título do nível"></input>
+    <input data-identifier="level" class="porcentageMin" type="number" placeholder="  % de acerto mínima"></input>
+    <input data-identifier="level"  class="imageLevel" type="url" placeholder="  URL da imagem do nível"></input>
+    <textarea data-identifier="expand" class="description" placeholder=" Descrição do nível"></textarea>
 </div>
 <div class="whiteBoard answerWait levelBox">
 </div>
@@ -199,19 +221,71 @@ listScreens.innerHTML=`  <div class="screen3CreateQuizz ">
 function sendApi(){
     sendQuizzApi={
         title:`${inputTitleQuizz}`,
-        color:`${colorQuestion}`,
-        answers:[{
-            text:`${correctAnswer}`,
-            image:`${urlImageCorrect}`,
-            isCorrectAnswer: true       
-        },
-    {
-        text: `${incorrectAnswer1}`,
-		image: `${urlImage1}`,
-		isCorrectAnswer: false
-    }
-    
-    ]
+        image: `${mainImage}`,
+        questions: [
+            {
+                title: `${textQuestion[k]}`,
+                color: `${colorQuestion[k]}`,
+                answers: [
+                    {
+                        text: `${correctAnswer[k]}`,
+                        image: `${urlImageCorrect[k]}`,
+                        isCorrectAnswer: true
+                    },
+                    {
+                        text: `${incorrectAnswer1[k]}`,
+                        image: `${urlImage1[k]}`,
+                        isCorrectAnswer: false
+                    }
+                ]
+            },
+            {
+                title: `${ textQuestion[k]}`,
+                color: `${colorQuestion[k]}`,
+                answers: [
+                    {
+                        text: `${correctAnswer[k]}`,
+                        image: `${urlImageCorrect[k]}`,
+                        isCorrectAnswer: true
+                    },
+                    {
+                        text: `${incorrectAnswer1[k]}`,
+                        image: `${urlImage1[k]}`,
+                        isCorrectAnswer: false
+                    }
+                ]
+            },
+            {
+                title: `${textQuestion[k]}`,
+                color: `${colorQuestion[k]}`,
+                answers: [
+                    {
+                        text: `${incorrectAnswer1[k]}`,
+                        image: `${urlImage1[k]}`,
+                        isCorrectAnswer: true
+                    },
+                    {
+                        text: `${incorrectAnswer2[k]}`,
+                        image: `${urlImage2[k]}`,
+                        isCorrectAnswer: false
+                    }
+                ]
+            }
+        ],
+        levels: [
+            {
+                title: `${titleLevel[k]}`,
+                image: `${imageLevel[k]}`,
+                text: `${description[k]}`,
+                minValue:  `${porcentageMin[k]}`
+            },
+            {
+                title: `${titleLevel[k]}`,
+                image: `${imageLevel[k]}`,
+                text: `${description[k]}`,
+                minValue: `${porcentageMin[k]}`
+            }
+        ]
     }
     console.log(sendQuizzApi.title)
 }
@@ -242,6 +316,7 @@ function checkInformation(){
         alert("A quantidade de niveis tem de ser ao menos 2");
     }
     if ((inputTitleQuizz.length >= 20 && inputTitleQuizz.length <= 65) && (numberQuestions >= 3) && (numberLevels >= 2)) {
+        tiratela1();
         screen2();
         generatorQuestion();
     }
@@ -275,7 +350,7 @@ function quizGenerator(quizz) {
 
 function quizzGeral(quizz) {
     allquizz.innerHTML += `
-    <div class="quizz" onclick="openQuizz(${quizz.id})">
+    <div class="quizz" data-identifier="quizz-card" onclick="openQuizz(${quizz.id})">
         <p class="escritaBrancaQuizz"> ${quizz.title} </p>
         <img src="${quizz.image}" alt = "">
     </div>
