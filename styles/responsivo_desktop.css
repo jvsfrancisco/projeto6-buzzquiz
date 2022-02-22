@@ -12,8 +12,6 @@
     .listaSeusQuizzes {
         flex-wrap: wrap;
     }
-
-    
 }
 
 @media(min-width:1051px) {
@@ -41,7 +39,6 @@
     .barraSeusQuizzes{
         width: 1051px;
     }
-    .quizzUsuario{}
 
     .sub-header{ 
         height: 227px;
@@ -94,5 +91,21 @@
     }
     .description{
         width: 564px;
+    }
+    .resultado {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 57px;
+    }
+    .resultado img {
+        width: 364px;
+        height: 273px;
+    }
+    .resultado div {
+        width: 328px;
+        overflow-wrap: break-word;
+        margin-left: 21px;
+        font-size: 19px;
+        line-height: 25px;
     }
 }

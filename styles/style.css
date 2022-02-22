@@ -286,10 +286,22 @@ height: 100%;
     color: #009C22;
 }
 
+.resultado img {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+}
 
+.result p {
+    background-color: #EC362D;
+    margin-bottom: 10px;
+}
 
-
-
+.result div {
+    color: #484848;
+    font-weight: bold;
+    font-size: 17px;
+}
 
 .textStrongBlack{
     margin-top: 100px;
@@ -302,11 +314,11 @@ height: 100%;
     margin: 100px auto 29px;
     
 }
- .top{
+.top{
     justify-content: center;
 }
 .box{
- margin: 24px 0px 24px 17px;
+    margin: 24px 0px 24px 17px;
 }
 .whiteBoard{
     background-color: #FFFFFF;

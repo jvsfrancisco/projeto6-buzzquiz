@@ -2,7 +2,10 @@ let sendQuizzApi={};
 let allquizz = document.querySelector(".listaQuizz")
 const quizzPage = document.querySelector(".quizz-page")
 const telaInicial = document.querySelector(".home");
-let arrayQuestions = null;
+let arrayQuestions;
+let corrects = 0;
+let wrongs = 0;
+let chosenquizz;
 let inputTitleQuizz;
 let mainImage;
 let numberQuestions;
@@ -302,7 +305,7 @@ function checkInformation(){
         alert("A quantidade de perguntas tem de ser ao menos 3");
     }
     if (numberLevels < 2) {
-        alert("A quantidade de niveis tem de ser ao menos 2");
+        alert("A quantidade de levels tem de ser ao menos 2");
     }
     if ((inputTitleQuizz.length >= 20 && inputTitleQuizz.length <= 65) && (numberQuestions >= 3) && (numberLevels >= 2)) {
         tiratela1();
@@ -323,20 +326,6 @@ function quizGenerator(quizz) {
     arrayquizz.forEach(quizzGeral);
 }
 
-// function QuizzUsuario(message){
-//     chat.innerHTML += `
-//     <li class="public">
-//         <span>
-//             <time>(${message.time})  </time>
-//             <strong>${message.from}</strong>
-//             para
-//             <strong>${message.to}</strong>:
-//             ${message.text}
-//         </span>
-//     </li>
-//     `
-// }
-
 function quizzGeral(quizz) {
     allquizz.innerHTML += `
     <div class="quizz" data-identifier="quizz-card" onclick="openQuizz(${quizz.id})">
@@ -354,7 +343,7 @@ function openQuizz(id) {
 }
 
 function openQuizzRender(quiz) {
-
+chosenquizz = quiz
 const title = quiz.data.title;
 const image = quiz.data.image;
 
@@ -372,7 +361,7 @@ banner.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0
 
         quizzPage.innerHTML += `<article class="questions"> </article>`
         const quests = document.querySelector(".questions:last-child") ;
-        quests.innerHTML+= `<div class="question-title" style="background-color:${arrayQuestions[i].color}">
+        quests.innerHTML+= `<div class="question-title" style="background-color:${arrayQuestions[i].color}" data-identifier="question">
         <p>${arrayQuestions[i].title}</p>
     </div>
     <div class= "answer"> </div>`;
@@ -382,12 +371,14 @@ banner.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0
 
         for(let j = 0; j < answers.length; j++) { 
             let alternatives = document.querySelector(".questions:last-child .answer");
-            alternatives.innerHTML += `<div class="alternatives" onclick="chooseAlternative(${answers[j].isCorrectAnswer},this,${i})">
+            alternatives.innerHTML += `<div class="alternatives" onclick="chooseAlternative(${answers[j].isCorrectAnswer},this,${i})" data-identifier="answer">
                                     <img src="${answers[j].image}" alt="simpson">
                                     <p>${answers[j].text}</p>
                                 </div>`;
         }                       
     }
+    quizzPage.innerHTML += `<div class = "results disappear"> </div>`;
+    
 }
 
 function randomize() { 
@@ -395,29 +386,87 @@ function randomize() {
 }
 
 function openQuizzError(error){
-    console.log(error)
-    alert("Ops, aconteceu algum problema... :(")
+    console.log(error);
+    alert("Ops, aconteceu algum problema... :(");
+    location.reload()
 }
 
 function chooseAlternative(correct, alternative, index) {
-    quizzPage.innerHTML += `<div class = "results"> </div>`
-    
-    const allAlternatives = document.querySelectorAll(`.questions:nth-child(${index+2}) .answer`)
 
-    alternative.classList.add("choiced")
+    const allAlternatives = document.querySelectorAll(`.questions:nth-child(${index+2}) .alternatives`);
+
 
     for(let i = 0; i < allAlternatives.length; i++) {
-        console.log(allAlternatives)
+        console.log(allAlternatives);
         if(arrayQuestions[index].answers[i].isCorrectAnswer){
-            allAlternatives[i].classList.add("correct")
+            allAlternatives[i].classList.add("correct");
         }
         else{
-            allAlternatives[i].classList.add("wrong")
+            allAlternatives[i].classList.add("wrong");
         }
-        if(!(allAlternatives[i].classList.contains("choiced"))){
-            allAlternatives[i].classList.add("other-choice")
+
+        allAlternatives[i].classList.add("other-choice");
+        alternative.classList.remove("other-choice");
+        alternative.classList.add("choiced")
         }
-    
-}
+    if(correct){
+        corrects ++;
+    } else {
+        wrongs ++;
+    }
+    setTimeout(function(){
+        const answers = document.querySelector(`.questions:nth-child(${index + 3}) .alternatives`);
+
+        answers.scrollIntoView({block: "center", behavior: "smooth"});
+    }, 2000);
+
+    const choiced = document.querySelectorAll(".choiced");
+
+    if(choiced.length === arrayQuestions.length)
+        resultRender();
 
 }
+
+function resultRender(){
+    const levels = chosenquizz.data.levels;
+    let gradeontest = corrects / (corrects + wrongs) * 100;
+    const result = document.querySelector(".results");
+
+    quizzPage.innerHTML += `<button onclick="resetQuizz()">Reiniciar Quizz</button>
+    <button eonclick="location.reload()">Voltar pra home</button>`
+
+    const botao = document.querySelectorAll(".quizz-page button");
+
+    result.classList.remove("disappear");
+
+    gradeontest = Math.round(gradeontest);
+
+    for(let i = (levels.length - 1); i >= 0; i--){
+        if(gradeontest >= levels[i].minValue){
+            result.innerHTML = `<p>${gradeontest}% de acerto: ${levels[i].title}</p>
+                                        <img src="${levels[i].image}">
+                                        <div>${levels[i].text}</div>`;
+        break;
+        }
+    }
+
+}
+
+function resetQuizz(){
+    const quizz = document.querySelector(".exibir-quizz");
+    const result = document.querySelector(".quizz-page:last-child");
+    const alternatives = document.querySelectorAll(".alternatives");
+
+    for(let i = 0; i < alternativas.length; i++){
+        alternatives[i].classList.remove("choiced", "other-choice", "correct", "wrong");
+    }
+
+    result.classList.add("disappear");
+    contaRespostasCorretas = 0;
+    contaRespostasIncorretas = 0;
+
+    quizz.scrollIntoView({block: "start", behavior: "smooth"});
+}
+
+
+
